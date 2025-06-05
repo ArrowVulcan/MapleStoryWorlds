@@ -248,7 +248,7 @@
                     <p>Set the PlayEmote method's execution space to "Client Only".</p>
                     <p>Add the event "KeyDownEvent" to the script.</p>
                     <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
-                    <p>Add the code inside the PlayEmote and HandleKeyDownEvent function like below.</p>
+                    <p>Add the code inside the PlayEmote and HandleKeyDownEvent like below.</p>
 
                     <br>
 
@@ -295,7 +295,7 @@ Event Handler:
                     <p>Set the PlayEmote method's execution space to "Server".</p>
                     <p>Add the event "KeyDownEvent" to the script.</p>
                     <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
-                    <p>Add the code inside the PlayEmote and HandleKeyDownEvent function like below.</p>
+                    <p>Add the code inside the PlayEmote and HandleKeyDownEvent like below.</p>
                     
                     <br>
 
@@ -506,7 +506,7 @@ Event Handler:
                     <p>Set the PlayActionState method's execution space to "Client Only".</p>
                     <p>Add the event "KeyDownEvent" to the script.</p>
                     <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
-                    <p>Add the code inside the PlayActionState and HandleKeyDownEvent function like below.</p>
+                    <p>Add the code inside the PlayActionState and HandleKeyDownEvent like below.</p>
 
                     <br>
 
@@ -545,7 +545,7 @@ Event Handler:
                     <p>Set the OnBeginPlay's execution Space to "Client Only".</p>
                     <p>Add the event "KeyDownEvent" to the script.</p>
                     <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
-                    <p>Add the code inside the OnBeginPlay and HandleKeyDownEvent function like below.</p>
+                    <p>Add the code inside the OnBeginPlay and HandleKeyDownEvent like below.</p>
 
                     <br>
                     
@@ -556,6 +556,7 @@ Method:
     void OnBeginPlay ( )
     {
         self.Entity.StateComponent:AddState("POLEARMSWING", PolearmSwing)
+        self.Entity.StateComponent:AddCondition("POLEARMSWING", "IDLE")
     }
 
 
@@ -574,22 +575,35 @@ Event Handler:
                     <br>
 
                     <p>Create a new script statetype "PolearmSwing".</p>
+                    <p>Add a boolean property "exitFlag" to the script and set it to false.</p>
                     <p>Add a OnEnter method to the script.</p>
-                    <p>Add the code inside the OnEnter function like below.</p>
+                    <p>Add a OnConditionCheck method to the script.</p>
+                    <p>Add the code inside the OnEnter and OnConditionCheck like below.</p>
 
                     <br>
 
                     <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_state.png" alt="struct">PolearmSwing</span></div>
                     <pre><code>
+Property:
+    boolean exitFlag = false
+
 Method:
     void OnEnter ( )
     {
+        self.exitFlag = false
+        _TimerService:SetTimerOnce(function() self.exitFlag = true end, 1)
+        
         local player = self.ParentComponent.Entity
         if not isvalid(player.AvatarRendererComponent) then return end
 
         local body = player.AvatarRendererComponent:GetBodyEntity()
         local actionEvent = ActionStateChangedEvent("swingPF", "swingPF", 1, SpriteAnimClipPlayType.Onetime)
         body:SendEvent(actionEvent)
+    }
+
+    boolean OnConditionCheck ( string nextStateName )
+    {
+        return self.exitFlag
     }
                     </code></pre>
 
