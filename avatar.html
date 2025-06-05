@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar - MapleStory Worlds Creators Fansite</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            height: 30px;
+            background-color: #CCC;
+            border-radius: 4px 4px 0px 0px;
+            padding: 10px;
+            margin-left: 5px;
+        }
+
+        .code-block{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            background-color: #CCC;
+            border-radius: 8px;
+        }
+
+        pre *{
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text !important;
+        }
+
+        pre, code {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        pre code.hljs{
+            padding: 0px 1em 10px 1em;
+        }
+
+        .code-buttons{
+            display: flex;
+            justify-content: right;
+        }
+
+        .button-selected{
+            background-color: #fafafa;
+        }
+
+        .button-disabled{
+            display: none;
+        }
+
+        .code-bar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .code-title{
+            margin-left: 10px;
+        }
+
+        .hljs-custom-purple{
+            color: rgb(199 0 215);
+        }
+
+        .hljs-custom-red{
+            color: rgb(255 73 73);
+        }
+
+        .hljs-string{
+            color: rgb(241 127 130);
+        }
+
+        .code-title-icon{
+            display: flex;
+        }
+
+        .code-title-icon img{
+            margin-right: 5px;
+        }
+
+        #download-button-wrapper{
+            display: flex;
+            justify-content: end;
+            margin: 0px 20px;
+            align-items: center;
+        }
+
+        #download-button{
+            width: 200px;
+            height: 40px;
+            background-color: rgb(52 55 102);
+            border-radius: 8px;
+            color: #FFF;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 12px;
+            box-shadow: 0px 0px 0px 2px #000C;
+            border: 1px solid #FFF3;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        #download-button p{
+            filter: drop-shadow(0px 0px 1px #000);
+        }
+
+        #download-button:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        #download-version{
+            color: #FFF;
+            font-size: 14px;
+            margin-right: 10px;
+            filter: drop-shadow(0px 0px 1px #000);
+        }
+
+        .script-description{
+            color: #FFF;
+            font-size: 12px;
+            background-color: rgb(0 0 0 / 40%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #0005;
+        }
+        
+        .script-description ul{
+            padding-left: 20px;
+        }
+
+        .script-description li{
+            margin: 10px 0px;
+        }
+
+        #content-table{
+            padding: 20px;
+        }
+
+        #content-table li{
+            margin: 10px 0px;
+            color: #FFF;
+            list-style-type: none;
+            background-color: rgb(52 55 102);
+            border-radius: 4px;
+            padding: 20px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        #content-table li:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        .content-title{
+            color: #FFF;
+            display: flex;
+            justify-content: center;
+            scroll-margin-top: 20px;
+        }
+
+        .script-description p{
+            margin: 4px 0px;
+        }
+
+        pre, code {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            border-radius: 8px;
+        }
+
+        pre{
+            margin: 20px 0px !important;
+        }
+
+        .content-wrapper{
+            margin: 30px 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <div id="logo">
+        <a href="./index"><img src="./images/logo.svg" alt="logo"></a>
+        <div>FANSITE</div>
+    </div>
+
+    <div id="content">
+
+        <a href="./index">
+            <div id="back-button"><i class="bi bi-caret-left-fill"></i> <p>Back</p></div>
+        </a>
+
+        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button"><i class="bi bi-caret-up-fill"></i></div>
+
+        <div id="title-text">
+            <h1>Avatar</h1>
+        </div>
+
+        <div id="content-table">
+
+            <ul>
+                <li onclick="scrollToElement('scroll-face-emote')"><b>Face Emote</b></li>
+                <li onclick="scrollToElement('scroll-add-avatar')"><b>Add Avatar</b></li>
+                <li onclick="scrollToElement('scroll-change-avatar-equipment')"><b>Change Avatar Equipment</b></li>
+                <li onclick="scrollToElement('scroll-change-avatar-animation')"><b>Change Avatar Animation</b></li>
+            </ul>
+
+        </div>
+
+        <div class="content-wrapper">
+
+            <div id="scroll-face-emote" class="content-title scroll-element">
+                <h2>Face Emote</h2>
+            </div>
+
+            <div class="script-description">
+                <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer (or an Avatar entity)</p>
+                <p>Add the event "KeyDownEvent" to the script.</p>
+                <p>Add the code inside the HandleKeyDownEvent function like below.</p>
+                <pre><code>
+Event Handler:
+    [service] (InputService)
+    HandleKeyDownEvent( KeyDownEvent event )
+    {
+        if not isvalid(self.Entity.AvatarRendererComponent) then return end
+
+        if event.key == KeyboardKey.Alpha1 then
+            self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType.Smile, 3)
+            return
+        end
+
+        if event.key == KeyboardKey.Alpha2 then
+            self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType.Cry, 3)
+            return
+        end
+
+        if event.key == KeyboardKey.Alpha3 then
+            self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType.Angry, 3)
+            return
+        end
+    }
+                </code></pre>
+                <p>Press <b>Play</b> and you can now change the player/avatar face emotions by pressing the keys 1, 2 or 3.</p>
+                <br>
+                <p>Here is a list of emotions available:</p>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+                                <th><p>Name</p></th>
+                                <th><p>Images</p></th>
+                            </tr>
+
+                            <tr>
+                                <td><p>Glitter</p></td>
+                                <td><img src="./images/faces/glitter.png" alt="glitter"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Angry</p></td>
+                                <td><img src="./images/faces/angry.png" alt="angry"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Wink</p></td>
+                                <td><img src="./images/faces/wink.png" alt="wink"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Bowing</p></td>
+                                <td><img src="./images/faces/bowing.png" alt="bowing"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Smile</p></td>
+                                <td><img src="./images/faces/smile.png" alt="smile"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Cheers</p></td>
+                                <td><img src="./images/faces/cheers.png" alt="cheers"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Pain</p></td>
+                                <td><img src="./images/faces/pain.png" alt="pain"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Default</p></td>
+                                <td><img src="./images/faces/default.png" alt="default"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Love</p></td>
+                                <td><img src="./images/faces/love.png" alt="love"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Oops</p></td>
+                                <td><img src="./images/faces/oops.png" alt="oops"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Bewildered</p></td>
+                                <td><p><img src="./images/faces/bewildered.png" alt="bewildered"></td>
+                            </tr>
+                            <tr>
+                                <td><p>qBlue</p></td>
+                                <td><img src="./images/faces/qblue.png" alt="qblue"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Vomit</p></td>
+                                <td><img src="./images/faces/vomit.png" alt="vomit"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Troubled</p></td>
+                                <td><img src="./images/faces/troubled.png" alt="troubled"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Stunned</p></td>
+                                <td><img src="./images/faces/stunned.png" alt="stunned"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Hit</p></td>
+                                <td><img src="./images/faces/hit.png" alt="hit"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Cry</p></td>
+                                <td><img src="./images/faces/cry.png" alt="cry"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Blaze</p></td>
+                                <td><img src="./images/faces/blaze.png" alt="blaze"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Shine</p></td>
+                                <td><img src="./images/faces/shine.png" alt="shine"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Hum</p></td>
+                                <td><img src="./images/faces/hum.png" alt="hum"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Hot</p></td>
+                                <td><img src="./images/faces/hot.png" alt="hot"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Dam</p></td>
+                                <td><img src="./images/faces/dam.png" alt="dam"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Chu</p></td>
+                                <td><img src="./images/faces/chu.png" alt="chu"></td>
+                            </tr>
+                            <tr>
+                                <td><p>Despair</p></td>
+                                <td><img src="./images/faces/despair.png" alt="despair"></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="content-wrapper">
+
+            <div id="scroll-add-avatar" class="content-title scroll-element">
+                <h2>Add Avatar</h2>
+            </div>
+
+            <div class="script-description">
+                <p>Create a new empty entity: <b>Create Entity -> Create Empty</b>.</p>
+                <p>Add a <b>TransformComponent</b> to your entity.</p>
+                <p>Add a <b>AvatarRendererComponent</b> to your entity.</p>
+                <p>Add a <b>CostumeManagerComponent</b> to your entity.</p>
+                <p>You should now see a entity that looks like your own avatar.</p>
+            </div>
+
+        </div>
+
+        <div class="content-wrapper">
+
+            <div id="scroll-change-avatar-equipment" class="content-title scroll-element">
+                <h2>Change Avatar Equipment</h2>
+            </div>
+
+            <div class="script-description">
+                <p>On the <b>CostumeManagerComponent</b>, press the dot to the right of the textfield.</p>
+                <p>Select a costume and it will now be used on your avatar.</p>
+                <p>You should now see the avatar have the costume equipped.</p>
+            </div>
+
+        </div>
+
+        <div class="content-wrapper">
+
+            <div id="scroll-change-avatar-animation" class="content-title scroll-element">
+                <h2>Change Avatar Animation</h2>
+            </div>
+
+            <div class="script-description">
+                <p>Create a new script component "ChangeAvatarAnimation" and add it to your avatar entity.</p>
+                <p>Add a OnBeginPlay method to the script.</p>
+                <p>Set the OnBeginPlay's Execution Space to Client Only.</p>
+                <p>Add the code inside the OnBeginPlay function like below.</p>
+                <pre><code>
+Method:
+    [client only]
+    void OnBeginPlay ( )
+    {
+        if not isvalid(self.Entity.AvatarRendererComponent) then return end
+
+        local body = self.Entity.AvatarRendererComponent:GetBodyEntity()
+        local actionEvent = ActionStateChangedEvent("swingP1", "swingP1", 1, SpriteAnimClipPlayType.Loop)
+        body:SendEvent(actionEvent)
+    }
+                </code></pre>
+                <p>Press <b>Play</b> and you should now see the avatar do a looping swing animation.</p>
+                <br>
+                <p>Here is a list of avatar action animations available:</p>
+                
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+                                <th><p>Default</p></th>
+                                <th><p>Swing<br>One-Handed</p></th>
+                                <th><p>Swing<br>Two-Handed</p></th>
+                                <th><p>Swing<br>Polearm</p></th>
+                                <th><p>Stab<br>One-Handed</p></th>
+                                <th><p>Stab<br>Two-Handed</p></th>
+                                <th><p>Shoot</p></th>
+                            </tr>
+
+                            <tr>
+                                <td><p>stand1</p></td>
+                                <td><p>swingO1</p></td>
+                                <td><p>swingT1</p></td>
+                                <td><p>swingP1</p></td>
+                                <td><p>stabO1</p></td>
+                                <td><p>stabT1</p></td>
+                                <td><p>shoot1</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>stand2</p></td>
+                                <td><p>swingO2</p></td>
+                                <td><p>swingT2</p></td>
+                                <td><p>swingP2</p></td>
+                                <td><p>stabO2</p></td>
+                                <td><p>stabT2</p></td>
+                                <td><p>shoot2</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>walk1</p></td>
+                                <td><p>swingO3</p></td>
+                                <td><p>swingT3</p></td>
+                                <td><p>swingPF</p></td>
+                                <td><p>stabOF</p></td>
+                                <td><p>stabTF</p></td>
+                                <td><p>shootF</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>walk2</p></td>
+                                <td><p>swingOF</p></td>
+                                <td><p>swingTF</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>alert</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>prone</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>proneStab</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>jump</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>fly</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>sit</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>ladder</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>rope</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>dead</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>heal</p></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="avatar">
+            <div id="avatar-bubble">
+                <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
+                <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
+            </div>
+            <img src="./images/avatar.png" alt="avatar">
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    
+    <script src="./scripts/base.js"></script>
+
+</body>
+</html>

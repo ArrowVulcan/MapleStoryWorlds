@@ -1,0 +1,298 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+p, b{
+    filter: drop-shadow(0px 0px 1px #000);
+}
+
+html{
+    display: flex;
+    justify-content: center;
+    background-color: #AAA;
+    font-family: "monospace", "Lucida Console", "Courier New", "Monaco";
+}
+
+body{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    cursor: url("../images/cursor/cursor.png"), auto;
+}
+
+#content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 164px);
+    width: 900px;
+    background-color: #00000080;
+    box-shadow: -5px 0px 5px 0px #000C, 5px 0px 5px 0px #000C;
+    border-left: 1px solid #FFF3;
+    border-right: 1px solid #FFF3;
+    border-top: 1px solid #FFF3;
+    border-radius: 18px 18px 0px 0px;
+}
+
+#title-text{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#background{
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* Scrollbar width */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555; /* Scrollbar color */
+    border-radius: 0px 6px 6px 0px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #CCC;
+    border-radius: 0px 8px 8px 0px;
+}
+
+#logo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    left: 10px;
+}
+
+#logo div{
+    position: absolute;
+    bottom: 13px;
+    right: 11px;
+    transform: rotateZ(-30deg);
+    background-color: #171831;
+    padding: 2px;
+    border-radius: 4px;
+    color: #FFF;
+    font-size: 14px;
+}
+
+#logo img{
+    width: 216px;
+}
+
+#logo a{
+    cursor: url("../images/cursor/cursor_click.png"), auto;
+}
+
+#avatar{
+    position: fixed;
+    right: -180px;
+    bottom: -150px;
+    pointer-events: none;
+}
+
+#avatar-bubble{
+    background-color: rgb(52 55 102);
+    border-radius: 8px;
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 40px;
+    bottom: 17px;
+    padding-right: 55px;
+    z-index: -1;
+    color: #FFF;
+    font-weight: bold;
+    border: 1px solid #000A;
+    min-width: 120px;
+    min-height: 30px;
+    flex-direction: row;
+    box-shadow: 0px 0px 0px 3px #000C;
+    border: 1px solid #FFF3;
+}
+
+#avatar-bubble a{
+    margin: 0px 4px;
+    cursor: url(../images/cursor/cursor_click.png), auto;
+}
+
+#msw-a{
+    margin: 0px 4px;
+    background-color: #ffffffbf;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 150ms;
+}
+
+#msw-a:hover{
+    background-color: #FFF;
+}
+
+#msw-logo{
+    padding: 4px;
+    transform: scale(1.2);
+}
+
+#github-logo, #msw-logo{
+    width: 40px;
+    height: 39px;
+    opacity: 0.75;
+    pointer-events: all;
+    transition: opacity 150ms;
+    object-fit: contain;
+}
+
+#github-logo:hover, #msw-logo:hover{
+    opacity: 1;
+}
+
+h1, h2, h3, h4{
+    filter: drop-shadow(0px 0px 1px #000);
+}
+
+.disabled{
+    filter:grayscale(1);
+    pointer-events: none;
+}
+
+.cursor-down{
+    cursor: url('../images/cursor/cursor_down.png'), auto !important;
+}
+
+#back-button{
+    position: absolute;
+    left: 0px;
+    top: -60px;
+    color: #FFF;
+    background-color: rgb(52 55 102);
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid rgb(255 255 255 / 40%);
+    box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+    cursor: url("../images/cursor/cursor_click.png"), auto;
+    display: flex;
+}
+
+#back-button:hover{
+    background-color: rgb(69 74 135);
+}
+
+#back-button i{
+    color: #FFF;
+}
+
+#scroll-top-button{
+    position: fixed;
+    bottom: 10px;
+    color: #FFF;
+    background-color: rgb(52 55 102);
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid rgb(255 255 255 / 40%);
+    box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+    cursor: url("../images/cursor/cursor_click.png"), auto;
+}
+
+#scroll-top-button:hover{
+    background-color: rgb(69 74 135);
+}
+
+.table-wrapper{
+    overflow-x: auto;
+}
+
+table{
+    padding: 10px;
+    border-radius: 8px;
+}
+
+table th{
+    padding: 10px;
+}
+
+table td{
+    background-color: #0005;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+table p{
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+iframe{
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 3px #000C;
+    border: 1px solid #FFF3;
+}
+
+@keyframes blink{
+    0%, 100% { opacity: 1; color: #f78029; }
+    50% { opacity: 0.5; }
+}
+
+.blink{
+    animation: blink 1s ease-in-out 2;
+}
+
+@media only screen and (max-width: 1120px){ /* 1024 */
+    
+    #background{
+        width: 100%;
+        height: 100%;
+    }
+
+    #content{
+        width: 100%;
+        padding-bottom: 180px;
+    }
+
+    #scroll-top-button{
+        left: -50px;
+    }
+
+}

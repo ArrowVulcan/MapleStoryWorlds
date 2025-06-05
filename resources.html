@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - MapleStory Worlds Creators Fansite</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            height: 30px;
+            background-color: #CCC;
+            border-radius: 4px 4px 0px 0px;
+            padding: 10px;
+            margin-left: 5px;
+        }
+
+        .code-block{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            background-color: #CCC;
+            border-radius: 8px;
+        }
+
+        pre *{
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text !important;
+        }
+
+        pre, code {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        pre code.hljs{
+            padding: 0px 1em 10px 1em;
+        }
+
+        .code-buttons{
+            display: flex;
+            justify-content: right;
+        }
+
+        .button-selected{
+            background-color: #fafafa;
+        }
+
+        .button-disabled{
+            display: none;
+        }
+
+        .code-bar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .code-title{
+            margin-left: 10px;
+        }
+
+        .hljs-custom-purple{
+            color: rgb(199 0 215);
+        }
+
+        .hljs-custom-red{
+            color: rgb(255 73 73);
+        }
+
+        .hljs-string{
+            color: rgb(241 127 130);
+        }
+
+        .code-title-icon{
+            display: flex;
+        }
+
+        .code-title-icon img{
+            margin-right: 5px;
+        }
+
+        #download-button-wrapper{
+            display: flex;
+            justify-content: end;
+            margin: 0px 20px;
+            align-items: center;
+        }
+
+        #download-button{
+            width: 200px;
+            height: 40px;
+            background-color: rgb(52 55 102);
+            border-radius: 8px;
+            color: #FFF;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 12px;
+            box-shadow: 0px 0px 0px 2px #000C;
+            border: 1px solid #FFF3;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        #download-button p{
+            filter: drop-shadow(0px 0px 1px #000);
+        }
+
+        #download-button:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        #download-version{
+            color: #FFF;
+            font-size: 14px;
+            margin-right: 10px;
+            filter: drop-shadow(0px 0px 1px #000);
+        }
+
+        .script-description{
+            color: #FFF;
+            font-size: 12px;
+            background-color: rgb(0 0 0 / 40%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #0005;
+        }
+        
+        .script-description ul{
+            padding-left: 20px;
+        }
+
+        .script-description li{
+            margin: 10px 0px;
+        }
+
+        #content-table{
+            padding: 20px;
+        }
+
+        #content-table li{
+            margin: 10px 0px;
+            color: #FFF;
+            list-style-type: none;
+            background-color: rgb(52 55 102);
+            border-radius: 4px;
+            padding: 20px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        #content-table li:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        .content-title{
+            color: #FFF;
+            display: flex;
+            justify-content: center;
+            scroll-margin-top: 20px;
+        }
+
+        .script-description p{
+            margin: 4px 0px;
+        }
+
+        pre, code{
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            border-radius: 8px;
+        }
+
+        pre{
+            margin: 20px 0px !important;
+        }
+
+        .content-wrapper{
+            margin: 30px 0px;
+        }
+
+        .content-wrapper h3{
+            margin: 40px 0px 20px 0px;
+        }
+
+        .script-description-wrapper{
+            background-color: #0005;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        #script-description{
+            color: #FFF;
+            font-size: 12px;
+            background-color: rgb(0 0 0 / 40%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #0005;
+        }
+        
+        #script-description ul{
+            padding-left: 20px;
+        }
+
+        #script-description li{
+            margin: 10px 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <div id="logo">
+        <a href="./index"><img src="./images/logo.svg" alt="logo"></a>
+        <div>FANSITE</div>
+    </div>
+
+    <div id="content">
+
+        <a href="./index">
+            <div id="back-button"><i class="bi bi-caret-left-fill"></i> <p>Back</p></div>
+        </a>
+
+        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button"><i class="bi bi-caret-up-fill"></i></div>
+
+        <div id="title-text">
+            <h1>Resource Finder</h1>
+        </div>
+
+        <div id="script-description">
+            <p>It can be very hard at times to find MapleStory resources that you are looking for. This is because the English tags are added by an AI (I'm looking at you #dark, #man and #lamp that is labeled on a lot of things incorrectly...)</p>
+            <br>
+            <p>Here you will find search keywords for commonly used MapleStory resources.</p>
+        </div>
+
+         <div class="content-wrapper">
+
+            <div id="scroll-maps" class="content-title scroll-element">
+                <h2>Maps</h2>
+            </div>
+
+            <div class="script-description">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+                                <th><p>Name</p></th>
+                                <th><p>Mapname</p></th>
+                                <th><p>Worldname</p></th>
+                            </tr>
+
+                            <tr>
+                                <td><p>Maple Island</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Amherst</p></td>
+                                <td><p>mapname#4000020</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Southperry</p></td>
+                                <td><p>mapname#4000030</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Victoria Island</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap010</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Lith Harbor</p></td>
+                                <td><p>mapname#104000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Henesys</p></td>
+                                <td><p>mapname#100000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Henesys Market</p></td>
+                                <td><p>mapname#100000100</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Henesys Park</p></td>
+                                <td><p>mapname#100000200</p></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><p>Ellinia</p></td>
+                                <td><p>mapname#101000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Perion</p></td>
+                                <td><p>mapname#102000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Kerning City</p></td>
+                                <td><p>mapname#103000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Sleepywoods</p></td>
+                                <td><p>mapname#910700000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Nautilus</p></td>
+                                <td><p>mapname#120000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Elluel</p></td>
+                                <td><p>mapname#910150300</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Partem</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap0103</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Karuppa Town</p></td>
+                                <td><p>mapname#910090314</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Ludus Lake</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap030</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Ludibrium</p></td>
+                                <td><p>mapname#220000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Omega Sector</p></td>
+                                <td><p>mapname#221000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Korean Folk Town</p></td>
+                                <td><p>mapname#224000000</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Rien</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap100</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Ereve</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap090</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>El Nath mts.</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap020</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Aqua Road</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap040</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Mu Lung Garden</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap060</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Nihal Desert</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap070</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Minar Forest</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap050</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Edelstein</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap110</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Temple of Time</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap080</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Kritias</p></td>
+                                <td></td>
+                                <td><p>worldname#worldmap170</p></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+         <div class="content-wrapper">
+
+            <div id="scroll-skills" class="content-title scroll-element">
+                <h2>Skills</h2>
+            </div>
+
+            <div class="script-description">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <tbody>
+
+                            <tr>
+                                <th><p>Job</p></th>
+                                <th><p>Basic</p></th>
+                                <th><p>Rank 1</p></th>
+                                <th><p>Rank 2</p></th>
+                                <th><p>Rank 3</p></th>
+                                <th><p>Rank 4</p></th>
+                                <th><p>Rank 5</p></th>
+                            </tr>
+
+                            <tr>
+                                <td><p>Warrior</p></td>
+                                <td><p>skill/100.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Hero</p></td>
+                                <td><p>skill/110.img</p></td>
+                                <td><p>skill/111.img</p></td>
+                                <td><p>skill/112.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Paladin</p></td>
+                                <td><p>skill/120.img</p></td>
+                                <td><p>skill/121.img</p></td>
+                                <td><p>skill/122.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Dark Knight</p></td>
+                                <td><p>skill/130.img</p></td>
+                                <td><p>skill/131.img</p></td>
+                                <td><p>skill/132.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Dawn Warrior</p></td>
+                                <td><p>skill/1100.img</p></td>
+                                <td><p>skill/1110.img</p></td>
+                                <td><p>skill/1111.img</p></td>
+                                <td><p>skill/1112.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Mihile</p></td>
+                                <td><p>skill/5000.img</p></td>
+                                <td><p>skill/5100.img</p></td>
+                                <td><p>skill/5110.img</p></td>
+                                <td><p>skill/5111.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Blaster</p></td>
+                                <td><p>skill/3700.img</p></td>
+                                <td><p>skill/3710.img</p></td>
+                                <td><p>skill/3711.img</p></td>
+                                <td><p>skill/3712.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Demon</p></td>
+                                <td><p>skill/3001.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Demon Slayer</p></td>
+                                <td><p>skill/3100.img</p></td>
+                                <td><p>skill/3110.img</p></td>
+                                <td><p>skill/3111.img</p></td>
+                                <td><p>skill/3112.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Demon Avenger</p></td>
+                                <td><p>skill/3101.img</p></td>
+                                <td><p>skill/3120.img</p></td>
+                                <td><p>skill/3121.img</p></td>
+                                <td><p>skill/3122.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Aran</p></td>
+                                <td><p>skill/2100.img</p></td>
+                                <td><p>skill/2110.img</p></td>
+                                <td><p>skill/2111.img</p></td>
+                                <td><p>skill/2112.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Kaiser</p></td>
+                                <td><p>skill/6000.img</p></td>
+                                <td><p>skill/6100.img</p></td>
+                                <td><p>skill/6110.img</p></td>
+                                <td><p>skill/6111.img</p></td>
+                                <td><p>skill/6112.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Adele</p></td>
+                                <td><p>skill/15002.img</p></td>
+                                <td><p>skill/15100.img</p></td>
+                                <td><p>skill/15110.img</p></td>
+                                <td><p>skill/15111.img</p></td>
+                                <td><p>skill/15112.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Zero</p></td>
+                                <td><p>skill/10000.img</p></td>
+                                <td><p>skill/10110.img</p></td>
+                                <td><p>skill/10111.img</p></td>
+                                <td><p>skill/10112.img</p></td>
+                            </tr>
+
+                            <!-- MISSING: Hayato -->
+
+                            <tr>
+                                <td><p>Magician</p></td>
+                                <td><p>skill/200.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Archmage (Fire/Poison)</p></td>
+                                <td><p>skill/210.img</p></td>
+                                <td><p>skill/211.img</p></td>
+                                <td><p>skill/212.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Archmage (Ice/Lightning)</p></td>
+                                <td><p>skill/220.img</p></td>
+                                <td><p>skill/221.img</p></td>
+                                <td><p>skill/222.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Bishop</p></td>
+                                <td><p>skill/230.img</p></td>
+                                <td><p>skill/231.img</p></td>
+                                <td><p>skill/232.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Blaze Wizard</p></td>
+                                <td><p>skill/1200.img</p></td>
+                                <td><p>skill/1210.img</p></td>
+                                <td><p>skill/1211.img</p></td>
+                                <td><p>skill/1212.img</p></td>
+                                <td><p>skill/1212.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Battle Mage</p></td>
+                                <td><p>skill/3200.img</p></td>
+                                <td><p>skill/3210.img</p></td>
+                                <td><p>skill/3211.img</p></td>
+                                <td><p>skill/3212.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Evan</p></td>
+                                <td><p>skill/2200.img</p></td>
+                                <td><p>skill/2211.img</p></td>
+                                <td><p>skill/2214.img</p></td>
+                                <td><p>skill/2217.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Luminous</p></td>
+                                <td><p>skill/2004.img</p></td>
+                                <td><p>skill/2700.img</p></td>
+                                <td><p>skill/2710.img</p></td>
+                                <td><p>skill/2711.img</p></td>
+                                <td><p>skill/2712.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Illium</p></td>
+                                <td><p>skill/15000.img</p></td>
+                                <td><p>skill/15200.img</p></td>
+                                <td><p>skill/15210.img</p></td>
+                                <td><p>skill/15211.img</p></td>
+                                <td><p>skill/15212.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Lara</p></td>
+                                <td><p>skill/16001.img</p></td>
+                                <td><p>skill/16200.img</p></td>
+                                <td><p>skill/16210.img</p></td>
+                                <td><p>skill/16211.img</p></td>
+                                <td><p>skill/16212.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Kinesis</p></td>
+                                <td><p>skill/14000.img</p></td>
+                                <td><p>skill/14200.img</p></td>
+                                <td><p>skill/14210.img</p></td>
+                                <td><p>skill/14211.img</p></td>
+                                <td><p>skill/14212.img</p></td>
+                            </tr>
+
+                            <!-- MISSING: Kanna -->
+
+                            <!-- MISSING: Lynn -->
+
+                            <tr>
+                                <td><p>Bowman</p></td>
+                                <td><p>skill/300.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Bowmaster</p></td>
+                                <td><p>skill/310.img</p></td>
+                                <td><p>skill/311.img</p></td>
+                                <td><p>skill/312.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Marksman</p></td>
+                                <td><p>skill/320.img</p></td>
+                                <td><p>skill/321.img</p></td>
+                                <td><p>skill/322.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Pathfinder</p></td>
+                                <td><p>skill/000.img</p></td>
+                                <td><p>skill/301.img</p></td>
+                                <td><p>skill/330.img</p></td>
+                                <td><p>skill/331.img</p></td>
+                                <td><p>skill/332.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Wind Archer</p></td>
+                                <td><p>skill/1300.img</p></td>
+                                <td><p>skill/1300.img</p></td>
+                                <td><p>skill/1310.img</p></td>
+                                <td><p>skill/1311.img</p></td>
+                                <td><p>skill/1312.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Wild Hunter</p></td>
+                                <td><p>skill/3000.img</p></td>
+                                <td><p>skill/3300.img</p></td>
+                                <td><p>skill/3310.img</p></td>
+                                <td><p>skill/3311.img</p></td>
+                                <td><p>skill/3312.img</p></td>
+                            </tr>
+
+                            <td><p>Mercedes</p></td>
+                                <td><p>skill/2002.img</p></td>
+                                <td><p>skill/2300.img</p></td>
+                                <td><p>skill/2310.img</p></td>
+                                <td><p>skill/2311.img</p></td>
+                                <td><p>skill/2312.img</p></td>
+                            </tr>
+
+                            <td><p>Kain</p></td>
+                                <td><p>skill/6003.img</p></td>
+                                <td><p>skill/6300.img</p></td>
+                                <td><p>skill/6310.img</p></td>
+                                <td><p>skill/6311.img</p></td>
+                                <td><p>skill/6312.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Thief</p></td>
+                                <td><p>skill/400.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Night Lord</p></td>
+                                <td><p>skill/410.img</p></td>
+                                <td><p>skill/411.img</p></td>
+                                <td><p>skill/412.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Shadower</p></td>
+                                <td><p>skill/420.img</p></td>
+                                <td><p>skill/421.img</p></td>
+                                <td><p>skill/422.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Dual Blade</p></td>
+                                <td><p>skill/400.img</p></td>
+                                <td><p>skill/430.img</p></td>
+                                <td><p>skill/431.img</p></td>
+                                <td><p>skill/432.img</p></td>
+                                <td><p>skill/433.img</p></td>
+                                <td><p>skill/434.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Night Walker</p></td>
+                                <td><p>skill/1400.img</p></td>
+                                <td><p>skill/1410.img</p></td>
+                                <td><p>skill/1411.img</p></td>
+                                <td><p>skill/1412.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Phantom</p></td>
+                                <td><p>skill/2003.img</p></td>
+                                <td><p>skill/2400.img</p></td>
+                                <td><p>skill/2410.img</p></td>
+                                <td><p>skill/2411.img</p></td>
+                                <td><p>skill/2412.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Cadena</p></td>
+                                <td><p>skill/6002.img</p></td>
+                                <td><p>skill/6400.img</p></td>
+                                <td><p>skill/6410.img</p></td>
+                                <td><p>skill/6411.img</p></td>
+                                <td><p>skill/6412.img</p></td>
+                            </tr>
+
+                            <!-- NOT EXISTING IN MSW?: Khali -->
+
+                            <tr>
+                                <td><p>Hoyoung</p></td>
+                                <td><p>skill/16000.img</p></td>
+                                <td><p>skill/16400.img</p></td>
+                                <td><p>skill/16410.img</p></td>
+                                <td><p>skill/16411.img</p></td>
+                                <td><p>skill/16412.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Pirate</p></td>
+                                <td><p>skill/500.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Buccaneer</p></td>
+                                <td><p>skill/510.img</p></td>
+                                <td><p>skill/511.img</p></td>
+                                <td><p>skill/512.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Corsair</p></td>
+                                <td><p>skill/520.img</p></td>
+                                <td><p>skill/521.img</p></td>
+                                <td><p>skill/522.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Cannon Shooter</p></td>
+                                <td><p>skill/501.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Cannoneer</p></td>
+                                <td><p>skill/530.img</p></td>
+                                <td><p>skill/531.img</p></td>
+                                <td><p>skill/532.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Striker</p></td>
+                                <td><p>skill/1500.img</p></td>
+                                <td><p>skill/1510.img</p></td>
+                                <td><p>skill/1511.img</p></td>
+                                <td><p>skill/1512.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Mechanic</p></td>
+                                <td><p>skill/3000.img</p></td>
+                                <td><p>skill/3500.img</p></td>
+                                <td><p>skill/3510.img</p></td>
+                                <td><p>skill/3511.img</p></td>
+                                <td><p>skill/3512.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Xenon</p></td>
+                                <td><p>skill/3002.img</p></td>
+                                <td><p>skill/3600.img</p></td>
+                                <td><p>skill/3610.img</p></td>
+                                <td><p>skill/3611.img</p></td>
+                                <td><p>skill/3612.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Shade</p></td>
+                                <td><p>skill/2005.img</p></td>
+                                <td><p>skill/2500.img</p></td>
+                                <td><p>skill/2510.img</p></td>
+                                <td><p>skill/2511.img</p></td>
+                                <td><p>skill/2512.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Angelic Buster</p></td>
+                                <td><p>skill/6001.img</p></td>
+                                <td><p>skill/6500.img</p></td>
+                                <td><p>skill/6510.img</p></td>
+                                <td><p>skill/6511.img</p></td>
+                                <td><p>skill/6512.img</p></td>
+                            </tr>
+
+                            <tr>
+                                <td><p>Ark</p></td>
+                                <td><p>skill/15001.img</p></td>
+                                <td><p>skill/15500.img</p></td>
+                                <td><p>skill/15510.img</p></td>
+                                <td><p>skill/15511.img</p></td>
+                                <td><p>skill/15512.img</p></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="avatar">
+            <div id="avatar-bubble">
+                <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
+                <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
+            </div>
+            <img src="./images/avatar.png" alt="avatar">
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <script src="./scripts/base.js"></script>
+
+</body>
+</html>

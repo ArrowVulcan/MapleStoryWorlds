@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapleStory Worlds Creators Fansite</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        #scripts-content, #guide-content{
+            display: flex;
+            flex-direction: row;
+            background-color: #0005;
+            border-radius: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .scripts-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 150ms;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        .scripts-wrapper:hover{
+            transform:scale(1.025);
+            filter: brightness(1.2);
+        }
+
+        .scripts-wrapper h2{
+            color: #FFF;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .scripts{
+            position: relative;
+            width: 360px;
+            height: 200px;
+            border-radius: 8px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            margin: 10px;
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+        }
+
+        .script-title-bg{
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: rgb(52 55 102);
+            border-radius: 0px 0px 8px 8px;
+            padding: 4px;
+            height: 30%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding-left: 10px;
+            border-top: 1px solid rgb(0 0 0 / 50%);
+        }
+
+        .scripts img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            object-position: 0px -30px;
+        }
+
+        .guide-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 150ms;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+            color: #FFF;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .guide-wrapper:hover > .guide{
+            transform:scale(1.025);
+            filter: brightness(1.2);
+        }
+
+        .guide{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(52 55 102);
+            border-radius: 8px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            margin: 10px;
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .guide .bi{
+            font-size: 64px;
+        }
+
+        #navbar{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            min-width: 150px;
+            height: 100vh;
+            border-radius: 0px 8px 8px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-button{
+            padding: 0px 20px;
+            position: relative;
+            width: 100%;
+            height: 75px;
+            background-color: #000A;
+            border-right: 10px solid #f78029;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 250ms;
+        }
+
+        .nav-button:hover{
+            width: 120%;
+            border-right: 10px solid hsl(25 93% 76% / 1);
+            background-color: #000C;
+        }
+
+        .nav-button p{
+            color: #FFF;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .nav-button:first-child{
+            border-top-right-radius: 16px;
+        }
+
+        .nav-button:last-child{
+            border-bottom-right-radius: 16px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+
+            #scripts-content, #guide-content{
+                display: flex;
+                flex-direction: row;
+                background-color: #0000;
+                border-radius: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-top: 15px;
+            }
+
+            .scripts h2{
+                font-size: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <!--
+    <div id="navbar">
+        <div class="nav-button"><p>Scripts</p></div>
+    </div>
+    -->
+
+    <div id="logo">
+        <a href="./index"><img src="./images/logo.svg" alt="logo"></a>
+        <div>FANSITE</div>
+    </div>
+
+    <div id="content">
+
+        <div id="title-text"><h1>Resources</h1></div>
+
+        <div id="guide-content">
+
+            <a href="./avatar">
+                <div class="guide-wrapper">
+                    <div class="guide">
+                        <i class="bi bi-person-fill"></i>
+                    </div>
+                    <h2>Avatar</h2>
+                </div>
+            </a>
+
+            <a href="./camera">
+                <div class="guide-wrapper">
+                    <div class="guide">
+                        <i class="bi bi-camera-fill"></i>
+                    </div>
+                    <h2>Camera</h2>
+                </div>
+            </a>
+
+            <a href="./resources">
+                <div class="guide-wrapper">
+                    <div class="guide">
+                        <i class="bi bi-collection-fill"></i>
+                    </div>
+                    <h2>Resource<br>Finder</h2>
+                </div>
+            </a>
+
+        </div>
+
+        <div id="title-text"><h1>Scripts</h1></div>
+
+        <div id="scripts-content">
+
+            <a href="./custom-portal">
+                <div class="scripts-wrapper">
+                    <div class="scripts">
+                        <img src="./images/scripts/custom_portal.jpg">
+                        <div class="script-title-bg">
+                            <h2>Custom Portal</h2>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <div id="avatar">
+            <div id="avatar-bubble">
+                <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
+                <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
+            </div>
+            <img src="./images/avatar.png" alt="avatar">
+        </div>
+
+    </div>
+
+    <script src="./scripts/base.js"></script>
+
+</body>
+</html>
