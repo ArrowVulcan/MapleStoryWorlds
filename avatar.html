@@ -243,45 +243,56 @@
 
                 <div id="face-emote-singleplayer" class="tab-content">
 
-                    <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer (or an Avatar entity)</p>
+                    <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer.</p>
+                    <p>Add the method "PlayEmote" to the script with the parameter emoteType(string) and duration(number).</p>
+                    <p>Set the PlayEmote method's execution space to "Client Only".</p>
                     <p>Add the event "KeyDownEvent" to the script.</p>
-                    <p>Add the code inside the HandleKeyDownEvent function like below.</p>
+                    <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
+                    <p>Add the code inside the PlayEmote and HandleKeyDownEvent function like below.</p>
 
                     <br>
 
                     <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_component.png" alt="struct">ChangeEmote</span></div>
                     <pre><code>
+Method:
+    [client only]
+    void PlayEmote( string emoteType, number duration )
+    {
+        self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType[emoteType], duration)
+    }
+
+
 Event Handler:
-    [service] (InputService)
+    [client only] [service] (InputService)
     HandleKeyDownEvent( KeyDownEvent event )
     {
         if not isvalid(self.Entity.AvatarRendererComponent) then return end
 
         if event.key == KeyboardKey.Alpha1 then
-            self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType.Smile, 3)
+            self:PlayEmote("Smile", 3)
             return
         end
 
         if event.key == KeyboardKey.Alpha2 then
-            self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType.Cry, 3)
+            self:PlayEmote("Cry", 3)
             return
         end
 
         if event.key == KeyboardKey.Alpha3 then
-            self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType.Angry, 3)
+            self:PlayEmote("Angry", 3)
             return
         end
     }
                     </code></pre>
-                    <p>Press <b>Play</b> and you can now change the player/avatar face emotions by pressing the keys 1, 2 or 3.</p>
+                    <p>Press <b>Play</b> and you can now change the players face emotions by pressing the keys 1, 2 or 3.</p>
                     
                 </div>
 
                 <div id="face-emote-multiplayer" class="tab-content tab-multiplayer">
 
                     <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer.</p>
-                    <p>Add the method "PlayEmote" to the script with parameter userID(string), emoteType(string) and duration(number).</p>
-                    <p>Set the PlayEmote function's execution space to "Server".</p>
+                    <p>Add the method "PlayEmote" to the script with the parameter emoteType(string) and duration(number).</p>
+                    <p>Set the PlayEmote method's execution space to "Server".</p>
                     <p>Add the event "KeyDownEvent" to the script.</p>
                     <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
                     <p>Add the code inside the PlayEmote and HandleKeyDownEvent function like below.</p>
@@ -292,12 +303,10 @@ Event Handler:
                     <pre><code>
 Method:
     [server]
-    void PlayEmote( string userID, string emoteType, number duration )
+    void PlayEmote( string emoteType, number duration )
     {
-        local player = self.Entity.CurrentMap:GetChildByName(userID)
-        if not isvalid(player) then return end
-
-        player.AvatarRendererComponent:PlayEmotion(EmotionalType[emoteType], duration)
+        if senderUserId ~= self.Entity.PlayerComponent.UserId then return end
+        self.Entity.AvatarRendererComponent:PlayEmotion(EmotionalType[emoteType], duration)
     }
 
 
@@ -305,18 +314,25 @@ Event Handler:
     [client only] [service] (InputService)
     HandleKeyDownEvent( KeyDownEvent event )
     {
-        local player = _UserService.LocalPlayer
-        local userID = player.PlayerComponent.UserId
-
-        if not isvalid(player.AvatarRendererComponent) then return end
+        if not isvalid(self.Entity.AvatarRendererComponent) then return end
 
         if event.key == KeyboardKey.Alpha1 then
-            self:PlayEmote(userID, "Love", 3)
+            self:PlayEmote("Smile", 3)
+            return
+        end
+
+        if event.key == KeyboardKey.Alpha2 then
+            self:PlayEmote("Cry", 3)
+            return
+        end
+
+        if event.key == KeyboardKey.Alpha3 then
+            self:PlayEmote("Angry", 3)
             return
         end
     }
                     </code></pre>
-                    <p>Press <b>Play</b> and you can now change your own face emotion by pressing the 1 key.</p>
+                    <p>Press <b>Play</b> and you can now change the players face emotions by pressing the keys 1, 2 or 3.</p>
 
                 </div>
                 <br>
@@ -485,10 +501,12 @@ Event Handler:
 
                 <div id="change-avatar-animation-singleplayer" class="tab-content">
 
-                    <p>Create a new script component "ChangeAvatarAnimation" and add it to the DefaultPlayer (or an Avatar entity)</p>
-                    <p>Add a OnBeginPlay method to the script.</p>
-                    <p>Set the OnBeginPlay's execution Space to "Client Only".</p>
-                    <p>Add the code inside the OnBeginPlay function like below.</p>
+                    <p>Create a new script component "ChangeAvatarAnimation" and add it to the DefaultPlayer.</p>
+                    <p>Add the method "PlayActionState" to the script with the parameter actionName(string), playRate(number) and spriteAnimClipPlayType(string).</p>
+                    <p>Set the PlayActionState method's execution space to "Client Only".</p>
+                    <p>Add the event "KeyDownEvent" to the script.</p>
+                    <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
+                    <p>Add the code inside the PlayActionState and HandleKeyDownEvent function like below.</p>
 
                     <br>
 
@@ -496,16 +514,26 @@ Event Handler:
                     <pre><code>
 Method:
     [client only]
-    void OnBeginPlay ( )
+    void PlayActionState ( string actionName, number playRate, string spriteAnimClipPlayType )
     {
         if not isvalid(self.Entity.AvatarRendererComponent) then return end
 
         local body = self.Entity.AvatarRendererComponent:GetBodyEntity()
-        local actionEvent = ActionStateChangedEvent("swingP1", "swingP1", 1, SpriteAnimClipPlayType.Loop)
+        local actionEvent = ActionStateChangedEvent(actionName, actionName, playRate, spriteAnimClipPlayType)
         body:SendEvent(actionEvent)
     }
+
+
+Event Handler:
+    [client only] [service] (InputService)
+    HandleKeyDownEvent( KeyDownEvent event )
+    {
+        if event.key == KeyboardKey.F then
+            self:PlayActionState("swingPF", 1, SpriteAnimClipPlayType.Onetime)
+        end
+    }
                     </code></pre>
-                    <p>Press <b>Play</b> and you should now see the avatar do a looping swing animation.</p>
+                    <p>Press <b>Play</b> and you should now see the character do a swing animation when pressing F key.</p>
                     <br>
 
                 </div>
@@ -565,7 +593,7 @@ Method:
     }
                     </code></pre>
 
-                    <p>Press <b>Play</b> and you should now see the player pressing F Key do a Swing animation.</p>
+                    <p>Press <b>Play</b> and you should now see the character do a swing animation when pressing F key.</p>
                     <br>
 
                 </div>
