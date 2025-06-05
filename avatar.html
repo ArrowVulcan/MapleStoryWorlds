@@ -235,10 +235,22 @@
             </div>
 
             <div class="script-description">
-                <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer (or an Avatar entity)</p>
-                <p>Add the event "KeyDownEvent" to the script.</p>
-                <p>Add the code inside the HandleKeyDownEvent function like below.</p>
-                <pre><code>
+
+                <div class="tabs">
+                    <div onclick="selectTab(this, 'face-emote-singleplayer')" class="tab-button tab-selected">Singleplayer</div>
+                    <div onclick="selectTab(this, 'face-emote-multiplayer')" class="tab-button">Multiplayer</div>
+                </div>
+
+                <div id="face-emote-singleplayer" class="tab-content">
+
+                    <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer (or an Avatar entity)</p>
+                    <p>Add the event "KeyDownEvent" to the script.</p>
+                    <p>Add the code inside the HandleKeyDownEvent function like below.</p>
+
+                    <br>
+
+                    <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_component.png" alt="struct">ChangeEmote</span></div>
+                    <pre><code>
 Event Handler:
     [service] (InputService)
     HandleKeyDownEvent( KeyDownEvent event )
@@ -260,8 +272,53 @@ Event Handler:
             return
         end
     }
-                </code></pre>
-                <p>Press <b>Play</b> and you can now change the player/avatar face emotions by pressing the keys 1, 2 or 3.</p>
+                    </code></pre>
+                    <p>Press <b>Play</b> and you can now change the player/avatar face emotions by pressing the keys 1, 2 or 3.</p>
+                    
+                </div>
+
+                <div id="face-emote-multiplayer" class="tab-content tab-multiplayer">
+
+                    <p>Create a new script component "ChangeEmote" and add it to the DefaultPlayer.</p>
+                    <p>Add the method "PlayEmote" to the script with parameter userID(string), emoteType(string) and duration(number).</p>
+                    <p>Set the PlayEmote function's execution space to "Server".</p>
+                    <p>Add the event "KeyDownEvent" to the script.</p>
+                    <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
+                    <p>Add the code inside the PlayEmote and HandleKeyDownEvent function like below.</p>
+                    
+                    <br>
+
+                    <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_component.png" alt="struct">ChangeEmote</span></div>
+                    <pre><code>
+Method:
+    [server]
+    void PlayEmote( string userID, string emoteType, number duration )
+    {
+        local player = self.Entity.CurrentMap:GetChildByName(userID)
+        if not isvalid(player) then return end
+
+        player.AvatarRendererComponent:PlayEmotion(EmotionalType[emoteType], duration)
+    }
+
+
+Event Handler:
+    [client only] [service] (InputService)
+    HandleKeyDownEvent( KeyDownEvent event )
+    {
+        local player = _UserService.LocalPlayer
+        local userID = player.PlayerComponent.UserId
+
+        if not isvalid(player.AvatarRendererComponent) then return end
+
+        if event.key == KeyboardKey.Alpha1 then
+            self:PlayEmote(userID, "Love", 3)
+            return
+        end
+    }
+                    </code></pre>
+                    <p>Press <b>Play</b> and you can now change your own face emotion by pressing the 1 key.</p>
+
+                </div>
                 <br>
                 <p>Here is a list of emotions available:</p>
 
@@ -420,11 +477,23 @@ Event Handler:
             </div>
 
             <div class="script-description">
-                <p>Create a new script component "ChangeAvatarAnimation" and add it to your avatar entity.</p>
-                <p>Add a OnBeginPlay method to the script.</p>
-                <p>Set the OnBeginPlay's Execution Space to Client Only.</p>
-                <p>Add the code inside the OnBeginPlay function like below.</p>
-                <pre><code>
+
+                <div class="tabs">
+                    <div onclick="selectTab(this, 'change-avatar-animation-singleplayer')" class="tab-button tab-selected">Singleplayer</div>
+                    <div onclick="selectTab(this, 'change-avatar-animation-multiplayer')" class="tab-button">Multiplayer</div>
+                </div>
+
+                <div id="change-avatar-animation-singleplayer" class="tab-content">
+
+                    <p>Create a new script component "ChangeAvatarAnimation" and add it to the DefaultPlayer (or an Avatar entity)</p>
+                    <p>Add a OnBeginPlay method to the script.</p>
+                    <p>Set the OnBeginPlay's execution Space to "Client Only".</p>
+                    <p>Add the code inside the OnBeginPlay function like below.</p>
+
+                    <br>
+
+                    <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_component.png" alt="struct">ChangeAvatarAnimation</span></div>
+                    <pre><code>
 Method:
     [client only]
     void OnBeginPlay ( )
@@ -435,8 +504,75 @@ Method:
         local actionEvent = ActionStateChangedEvent("swingP1", "swingP1", 1, SpriteAnimClipPlayType.Loop)
         body:SendEvent(actionEvent)
     }
-                </code></pre>
-                <p>Press <b>Play</b> and you should now see the avatar do a looping swing animation.</p>
+                    </code></pre>
+                    <p>Press <b>Play</b> and you should now see the avatar do a looping swing animation.</p>
+                    <br>
+
+                </div>
+
+                <div id="change-avatar-animation-multiplayer" class="tab-content tab-multiplayer">
+
+                    <p>Create a new script component "ChangeAvatarAnimation" and add it to the DefaultPlayer.</p>
+                    <p>Add a OnBeginPlay method to the script.</p>
+                    <p>Set the OnBeginPlay's execution Space to "Client Only".</p>
+                    <p>Add the event "KeyDownEvent" to the script.</p>
+                    <p>Set the HandleKeyDownEvent's execution space to "Client Only".</p>
+                    <p>Add the code inside the OnBeginPlay and HandleKeyDownEvent function like below.</p>
+
+                    <br>
+                    
+                    <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_component.png" alt="struct">ChangeAvatarAnimation</span></div>
+                    <pre><code>
+Method:
+    [client only]
+    void OnBeginPlay ( )
+    {
+        self.Entity.StateComponent:AddState("POLEARMSWING", PolearmSwing)
+    }
+
+
+Event Handler:
+    [client only] [service] (InputService)
+    HandleKeyDownEvent( KeyDownEvent event )
+    {
+        local player = _UserService.LocalPlayer
+
+        if event.key == KeyboardKey.F then
+            player.StateComponent:ChangeState("POLEARMSWING")
+        end
+    }
+                    </code></pre>
+
+                    <br>
+
+                    <p>Create a new script statetype "PolearmSwing".</p>
+                    <p>Add a OnEnter method to the script.</p>
+                    <p>Add the code inside the OnEnter function like below.</p>
+
+                    <br>
+
+                    <div class="code-title"><span class="code-title-icon"><img src="./images/script_icons/icon_state.png" alt="struct">PolearmSwing</span></div>
+                    <pre><code>
+Method:
+    void OnEnter ( )
+    {
+        local player = self.ParentComponent.Entity
+        if not isvalid(player.AvatarRendererComponent) then return end
+
+        local body = player.AvatarRendererComponent:GetBodyEntity()
+        local actionEvent = ActionStateChangedEvent("swingPF", "swingPF", 1, SpriteAnimClipPlayType.Onetime)
+        body:SendEvent(actionEvent)
+    }
+                    </code></pre>
+
+                    <p>Press <b>Play</b> and you should now see the player pressing F Key do a Swing animation.</p>
+                    <br>
+
+                </div>
+
+                <br>
+
+                <p>NOTE: Almost all the default states already exist on the DefaultPlayer's AvatarStateAnimationComponent.</p>
                 <br>
                 <p>Here is a list of avatar action animations available:</p>
                 

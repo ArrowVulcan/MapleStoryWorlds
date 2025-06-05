@@ -139,6 +139,28 @@ function setButton(e, str){
 }
 
 
+function selectTab(e, tabName){
+
+    let parent = e.parentElement
+
+    for( let i = 0; i < parent.children.length; i++){
+        parent.children[i].classList.remove("tab-selected")
+    }
+
+    e.classList.add("tab-selected")
+
+    let tab = document.getElementById(tabName)
+    tab.style.display = "block";
+
+    if( tab.id.includes("singleplayer") ){
+        tab.nextElementSibling.style.display = "none"
+    }else{
+        tab.previousElementSibling.style.display = "none"
+    }
+
+}
+
+
 /*************************/
 /* Add LUA Styling Start */
 /*************************/

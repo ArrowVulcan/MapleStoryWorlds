@@ -264,6 +264,46 @@ table p{
     user-select: text;
 }
 
+.tabs{
+    display: flex;
+}
+
+.tab-selected{
+    background-color: rgb(69 74 135) !important;
+}
+
+.tab-button{
+    padding: 10px;
+    background-color: rgb(52 55 102);
+}
+
+.tab-button:first-child{
+    border-top-left-radius: 8px;
+    border-right: 1px solid #0005;
+    border-left: 1px solid #0005;
+    border-top: 1px solid #0005;
+}
+
+.tab-button:last-child{
+    border-top-right-radius: 8px;
+    border-right: 1px solid #0005;
+    border-left: 1px solid #0005;
+    border-top: 1px solid #0005;
+}
+
+.tab-content{
+    background-color: rgb(69 74 135);
+    padding: 5px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #0005;
+}
+
+.tab-multiplayer{
+    display: none;
+}
+
 iframe{
     margin: 10px;
     border-radius: 8px;
