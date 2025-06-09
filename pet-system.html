@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A MapleStory Worlds script/package.">
+    <title>Pet System - MapleStory Worlds Creators Fansite</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        .button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            height: 30px;
+            background-color: #CCC;
+            border-radius: 4px 4px 0px 0px;
+            padding: 10px;
+            margin-left: 5px;
+        }
+
+        .code-block{
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            background-color: #CCC;
+            border-radius: 8px;
+        }
+
+        pre *{
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text !important;
+        }
+
+        pre, code {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+            border-radius: 0px 0px 8px 8px;
+        }
+
+        pre code.hljs{
+            padding: 0px 1em 10px 1em;
+        }
+
+        .code-buttons{
+            display: flex;
+            justify-content: right;
+        }
+
+        .button-selected{
+            background-color: #fafafa;
+        }
+
+        .button-disabled{
+            display: none;
+        }
+
+        .code-bar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .code-title{
+            margin-left: 10px;
+        }
+
+        .hljs-custom-purple{
+            color: rgb(199 0 215);
+        }
+
+        .hljs-custom-red{
+            color: rgb(255 73 73);
+        }
+
+        .hljs-string{
+            color: rgb(241 127 130);
+        }
+
+        .code-title-icon{
+            display: flex;
+        }
+
+        .code-title-icon img{
+            margin-right: 5px;
+        }
+
+        #download-button-wrapper{
+            display: flex;
+            justify-content: end;
+            margin: 0px 20px;
+            align-items: center;
+        }
+
+        #download-button{
+            width: 200px;
+            height: 40px;
+            background-color: rgb(52 55 102);
+            border-radius: 8px;
+            color: #FFF;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 12px;
+            box-shadow: 0px 0px 0px 2px #000C;
+            border: 1px solid #FFF3;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        #download-button p{
+            filter: drop-shadow(0px 0px 1px #000);
+        }
+
+        #download-button:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        #download-version{
+            color: #FFF;
+            font-size: 14px;
+            margin-right: 10px;
+            filter: drop-shadow(0px 0px 1px #000);
+        }
+
+        #script-description{
+            color: #FFF;
+            font-size: 12px;
+            background-color: rgb(0 0 0 / 40%);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #0005;
+        }
+        
+        #script-description ul{
+            padding-left: 20px;
+        }
+
+        #script-description li{
+            margin: 10px 0px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="background"></div>
+
+    <div id="logo">
+        <a href="./"><img src="./images/logo.svg" width="216" alt="logo"></a>
+        <div>FANSITE</div>
+    </div>
+
+    <div id="content">
+
+        <a href="./">
+            <div id="back-button"><i class="bi bi-caret-left-fill"></i> <p>Back</p></div>
+        </a>
+
+        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button"><i class="bi bi-caret-up-fill"></i></div>
+
+        <div id="title-text">
+            <h1>Pet System</h1>
+        </div>
+
+        <div id="download-button-wrapper">
+            <p id="download-version">v1.0</p>
+            <a href="./files/Pets.modpackage" download>
+                <div id="download-button">
+                    <i class="bi bi-download"></i>
+                    <p>Download Package</p>
+                </div>
+            </a>
+        </div>
+
+        <div id="script-description">
+            <p>This is a pet package for spawning a pet that follow their owner.</p>
+            <br>
+            <p>The package currently includes 3 pre-made Models (Snail, Puffram and Haku).</p>
+            <br>
+            <p>There are currently 7 states for the pets (STAND, MOVE, ATTACK, SUMMONED, DEAD2, TELEPORTSTART and TELEPORTEND).</p>
+            <br>
+            <br>
+            <p><b>How to use:</b></p>
+            <br>
+            <p>After importing the package, add PlayerPetComponent to the DefaultPlayer and set the PetID.</p>
+            <br>
+            <p>The PetID is the ID of the specific pet found in the dataset "Pet" within the Datasets folder.</p>
+            <br>
+            <br>
+            <p><b>Video:</b></p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Xk5ULCNNDB0?si=x7qbGnnQabeUxlN7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div id="avatar">
+            <div id="avatar-bubble">
+                <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
+                <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
+            </div>
+            <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    
+    <script src="./scripts/base.js"></script>
+
+</body>
+</html>

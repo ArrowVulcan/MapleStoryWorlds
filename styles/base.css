@@ -63,7 +63,7 @@ body{
 }
 
 #background{
-    background-image: url(../images/bg.png);
+    background-image: url(../images/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -73,6 +73,7 @@ body{
     z-index: -1;
     top: 0px;
     left: 0px;
+    image-rendering: pixelated;
 }
 
 ::-webkit-scrollbar {
