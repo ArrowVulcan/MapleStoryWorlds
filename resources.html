@@ -222,6 +222,238 @@
             margin: 10px 0px;
         }
 
+        #interactive-map{
+            display: flex;
+            justify-content: center;
+            margin: 10px;
+            margin-top: 50px;
+        }
+
+        #map-wrapper{
+            position: relative;
+            max-width: 640px;
+            width: 100%;
+        }
+
+        .interactive-map-image{
+            width: 100%;
+            height: 100%;
+            image-rendering: pixelated;
+        }
+
+        .map-dots{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            pointer-events: none;
+        }
+
+        .map-dots img{
+            position: absolute;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+            pointer-events: all;
+        }
+
+        .world-map{
+            display: none;
+        }
+
+        .show{
+            display: flex !important;
+            flex-wrap: wrap;
+        }
+
+        #map-back{
+            position: absolute;
+            color: #FFF;
+            background-color: rgb(52 55 102);
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+            display: flex;
+            top: -50px;
+            align-items: center;
+        }
+
+        #map-back:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        .map-island:hover{
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        #map-version{
+            position: absolute;
+            color: #FFF;
+            background-color: rgb(52 55 102);
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+            display: flex;
+            top: -50px;
+            right: 0px;
+        }
+
+        #map-version:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        .map-new, .map-old{
+            display: none;
+        }
+
+        #interactive-skill{
+            width: 100%;
+            min-height: 330px;
+        }
+
+        #interactive-skill-tab{
+            display: flex;
+            left: 10px;
+            position: relative;
+        }
+
+        .skill-tabs{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 24px;
+            background-color: #0005;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            cursor: url("./images/cursor/cursor_click.png"), auto;
+        }
+
+        .skill-tabs:hover{
+            background-color: rgb(153 102 0);
+        }
+
+        #interactive-skill-wrapper{
+            width: 100%;
+            display: flex;
+            background-color: rgb(69 74 135);
+            border-radius: 8px;
+            padding: 2px;
+            max-height: 360px;
+            height: 360px;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .active-tab{
+            background-color: #FA0;
+        }
+
+        .skill-wrapper{
+            display: flex;
+            padding: 10px;
+            background-color: rgb(52 55 102);
+            border: 1px solid #0005;
+            border-radius: 8px;
+            width: calc(50% - 1px);
+            cursor: url(./images/cursor/cursor_click.png), auto;
+            max-height: 57px;
+        }
+
+        .skill-wrapper:hover{
+            background-color: rgb(61 64 118);
+        }
+
+        .skill-text{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0px 10px;
+            margin: 0px 5px;
+        }
+
+        #interactive-dropdown{
+            position: relative;
+            margin: 10px 0px;
+            color: #FFF;
+            background-color: rgb(52 55 102);
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            cursor: url(./images/cursor/cursor_click.png), auto;
+            display: inline-flex;
+        }
+
+        #interactive-dropdown:hover{
+            background-color: rgb(69 74 135);
+        }
+
+        #interactive-dropdown span{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            left: 110px;
+            height: 100%;
+            top: 0px;
+            pointer-events: none;
+            width: 200px;
+        }
+
+        #interactive-dropdown-list{
+            position: absolute;
+            top: 54px;
+            left: 0px;
+            width: 300px;
+            height: 300px;
+            z-index: 5;
+            color: #FFF;
+            background-color: rgb(52 55 102);
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid rgb(255 255 255 / 40%);
+            box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
+            overflow-y: scroll;
+            display: none;
+        }
+
+        #interactive-dropdown-wrapper{
+            position: relative;
+        }
+
+        .interactive-dropdown-item{
+            background-color: #FFF1;
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0px;
+            cursor: url(./images/cursor/cursor_click.png), auto;
+        }
+
+        .interactive-dropdown-item-header{
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0px;
+            text-align: center;
+        }
+
+        .interactive-dropdown-item:hover{
+            background-color: #FFF3;
+        }
+
+        .interactive-job-skills{
+            display: none;
+            width: 100%;
+        }
+
+        .intercative-job-skill-tab{
+            display: none;
+            width: 100%;
+            gap: 2px;
+        }
+
     </style>
 
 </head>
@@ -274,6 +506,430 @@
             <div id="scroll-maps" class="content-title scroll-element">
                 <h2>Maps</h2>
             </div>
+
+            <div class="script-description">
+
+                <div id="interactive-map">
+
+                    <div id="map-wrapper">
+
+                        <div onclick="changeWorld(this)" id="map-version"><p>New Map</p></div>
+
+                        <div data-name="maple-world" class="world-map show">
+
+                            <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_World.png" alt="Maple World">
+                            
+                            <div class="map-islands">
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 40px; height: 30px; left: 124px; top: 70px;" data-map="maple-island"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 118px; height: 105px; left: 28px; top: 116px;" data-map="victoria-island"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 81px; height: 61px; left: 156px; top: 171px;" data-map="aqua-road"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 133px; height: 100px; left: 201px; top: 234px;" data-map="ludus-lake"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 55px; height: 72px; left: 163px; top: 93px;" data-map="ereve"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 58px; height: 81px; left: 25px; top: 224px;" data-map="rien"></div>
+                            </div>
+
+                            <!--
+                            <div class="map-dots">
+                                <img onclick="selectMap(this)" width="12px" height="12px" style="left: 183px; top: 116px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ereve" data-koreanname="에레브">
+                                <img onclick="selectMap(this)" width="12px" height="12px" style="left: 47px; top: 269px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Rien" data-koreanname="리엔">
+                            </div>
+                            -->
+
+                        </div>
+
+                        <div data-name="maple-island" class="world-map">
+
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+
+                            <div class="map-new">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island.png" alt="Maple Island New">
+                                
+                                <div class="map-dots">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 190px; top: 137px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Maple Tree Hill" data-koreanname="단풍나무 언덕">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 201px; top: 193px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Snail Park" data-koreanname="달팽이동산">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 297px; top: 214px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 332px; top: 240px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Entrance to Adventurer Training Center" data-koreanname="모험가의 수련장 입구">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 368px; top: 263px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Split Road of Destiny" data-koreanname="선택의 갈림길">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 387px; top: 292px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 437px; top: 305px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Port" data-koreanname="선착장">
+                                </div>
+
+                            </div>
+
+                            <div class="map-old">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island_old.png" alt="Maple Island Old">
+                                
+                                <div class="map-dots">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 446px; top: 212px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 372px; top: 286px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div data-name="victoria-island" class="world-map">
+
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+
+                            <div class="map-new">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island.png" alt="Victoria Island New">
+                                
+                                <div class="map-dots">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 87px; top: 271px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 256px; top: 309px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 389px; top: 350px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Nautilus" data-koreanname="노틸러스">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 398px; top: 233px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinia" data-koreanname="엘리니아">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 292px; top: 136px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Perion" data-koreanname="페리온">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 188px; top: 171px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning City" data-koreanname="커닝시티">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 276px; top: 223px;" src="./images/maps/purple_dot.png" alt="purple dot" data-name="Six Path Crossway" data-koreanname="여섯갈래길">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 314px; top: 385px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Partem, Karuppa Town" data-koreanname="파르템, 카루파의 마을">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 489px; top: 210px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Elluel" data-koreanname="에우렐">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 112px; top: 378px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Mushroom Castle" data-koreanname="버섯의 성">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 393px; top: 187px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinel" data-koreanname="요정학원 엘리넬">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 473px; top: 302px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Elodin" data-koreanname="엘로딘">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 557px; top: 258px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Gold Beach" data-koreanname="골드비치">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 458px; top: 131px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Magician Association" data-koreanname="마법사 협회">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 118px; top: 219px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning Tower" data-koreanname="커닝타워">
+                                </div>
+
+                            </div>
+
+                            <div class="map-old">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island_old.png" alt="Victoria Island Old">
+                                
+                                <div class="map-dots">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 93px; top: 366px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 282px; top: 368px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 474px; top: 385px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Nautilus" data-koreanname="노틸러스">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 437px; top: 245px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinia" data-koreanname="엘리니아">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 237px; top: 77px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Perion" data-koreanname="페리온">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 87px; top: 177px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning City" data-koreanname="커닝시티">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 265px; top: 252px;" src="./images/maps/purple_dot.png" alt="purple dot" data-name="Sleepywoods" data-koreanname="슬리피우드">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div data-name="rien" class="world-map">
+
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+
+                            <div class="map-new">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien New">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                            <div class="map-old">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien Old">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div data-name="ereve" class="world-map">
+
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+
+                            <div class="map-new">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve New">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                            <div class="map-old">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve Old">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div data-name="aqua-road" class="world-map">
+
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+
+                            <div class="map-new">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road New">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                            <div class="map-old">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road Old">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div data-name="ludus-lake" class="world-map">
+
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+
+                            <div class="map-new">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake New">
+                                
+                                <div class="map-dots">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 310px; top: 111px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ludibrium" data-koreanname="루디브리엄">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 181px; top: 378px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Omega Sector" data-koreanname="지구방위본부">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 505px; top: 337px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Korean Folk Town" data-koreanname="아랫마을">
+                                </div>
+
+                            </div>
+
+                            <div class="map-old">
+
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake Old">
+                                
+                                <div class="map-dots">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="script-description">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <tbody id="map-body">
+
+                                <tr>
+                                    <th><p>Name</p></th>
+                                    <th><p>Korean name</p></th>
+                                </tr>
+
+                                <tr>
+                                    <td><p id="map-text-name"></p></td>
+                                    <td><p id="map-text-koreanname"></p></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br>
+
+            <div id="scroll-skills" class="content-title scroll-element">
+                <h2>Classes and Jobs</h2>
+            </div>
+
+            <div class="script-description">
+
+                <div id="interactive-dropdown-wrapper">
+
+                    <div onclick="showDropdown()" id="interactive-dropdown">
+                        <p>Select Job</p>
+                        <span id="interactive-dropdown-job-name">Hero</span>
+                    </div>
+
+                    <div id="interactive-dropdown-list">
+                        <div class="interactive-dropdown-item-header"><p>Warrior</p></div>
+                        <div onclick="chooseJob(this)" data-name="Hero" class="interactive-dropdown-item"><p>Hero</p></div>
+                        <div onclick="chooseJob(this)" data-name="Paladin" class="interactive-dropdown-item"><p>Paladin</p></div>
+                        <div onclick="chooseJob(this)" data-name="Dark Knight" class="interactive-dropdown-item"><p>Dark Knight</p></div>
+                        <div onclick="chooseJob(this)" data-name="Dawn Warrior" class="interactive-dropdown-item"><p>Dawn Warrior</p></div>
+                        <div onclick="chooseJob(this)" data-name="Mihile" class="interactive-dropdown-item"><p>Mihile</p></div>
+                        <div onclick="chooseJob(this)" data-name="Blaster" class="interactive-dropdown-item"><p>Blaster</p></div>
+                        <div onclick="chooseJob(this)" data-name="Demon Slayer" class="interactive-dropdown-item"><p>Demon Slayer</p></div>
+                        <div onclick="chooseJob(this)" data-name="Demon Avenger" class="interactive-dropdown-item"><p>Demon Avenger</p></div>
+                        <div onclick="chooseJob(this)" data-name="Aran" class="interactive-dropdown-item"><p>Aran</p></div>
+                        <div onclick="chooseJob(this)" data-name="Kaiser" class="interactive-dropdown-item"><p>Kaiser</p></div>
+                        <div onclick="chooseJob(this)" data-name="Adele" class="interactive-dropdown-item"><p>Adele</p></div>
+                        <div onclick="chooseJob(this)" data-name="Zero" class="interactive-dropdown-item"><p>Zero</p></div>
+                        <div onclick="chooseJob(this)" data-name="Hayato" class="interactive-dropdown-item"><p>Hayato</p></div>
+                        <div class="interactive-dropdown-item-header"><p>Magician</p></div>
+                        <div onclick="chooseJob(this)" data-name="Sia Astelle" class="interactive-dropdown-item"><p>Sia Astelle</p></div>
+                        <div onclick="chooseJob(this)" data-name="Arch Mage (Fire/Poison)" class="interactive-dropdown-item"><p>Arch Mage (Fire/Poison)</p></div>
+                        <div onclick="chooseJob(this)" data-name="Arch Mage (Ice/Lightning)" class="interactive-dropdown-item"><p>Arch Mage (Ice/Lightning)</p></div>
+                        <div onclick="chooseJob(this)" data-name="Bishop" class="interactive-dropdown-item"><p>Bishop</p></div>
+                        <div onclick="chooseJob(this)" data-name="Blaze Wizard" class="interactive-dropdown-item"><p>Blaze Wizard</p></div>
+                        <div onclick="chooseJob(this)" data-name="Battle Mage" class="interactive-dropdown-item"><p>Battle Mage</p></div>
+                        <div onclick="chooseJob(this)" data-name="Evan" class="interactive-dropdown-item"><p>Evan</p></div>
+                        <div onclick="chooseJob(this)" data-name="Luminous" class="interactive-dropdown-item"><p>Luminous</p></div>
+                        <div onclick="chooseJob(this)" data-name="Illium" class="interactive-dropdown-item"><p>Illium</p></div>
+                        <div onclick="chooseJob(this)" data-name="Lara" class="interactive-dropdown-item"><p>Lara</p></div>
+                        <div onclick="chooseJob(this)" data-name="Kinesis" class="interactive-dropdown-item"><p>Kinesis</p></div>
+                        <div onclick="chooseJob(this)" data-name="Kanna" class="interactive-dropdown-item"><p>Kanna</p></div>
+                        <div onclick="chooseJob(this)" data-name="Lynn" class="interactive-dropdown-item"><p>Lynn</p></div>
+                        <div class="interactive-dropdown-item-header"><p>Bowman</p></div>
+                        <div onclick="chooseJob(this)" data-name="Bowmaster" class="interactive-dropdown-item"><p>Bowmaster</p></div>
+                        <div onclick="chooseJob(this)" data-name="Marksman" class="interactive-dropdown-item"><p>Marksman</p></div>
+                        <div onclick="chooseJob(this)" data-name="Pathfinder" class="interactive-dropdown-item"><p>Pathfinder</p></div>
+                        <div onclick="chooseJob(this)" data-name="Wind Archer" class="interactive-dropdown-item"><p>Wind Archer</p></div>
+                        <div onclick="chooseJob(this)" data-name="Wild Hunter" class="interactive-dropdown-item"><p>Wild Hunter</p></div>
+                        <div onclick="chooseJob(this)" data-name="Mercedes" class="interactive-dropdown-item"><p>Mercedes</p></div>
+                        <div onclick="chooseJob(this)" data-name="Kain" class="interactive-dropdown-item"><p>Kain</p></div>
+                        <div class="interactive-dropdown-item-header"><p>Thief</p></div>
+                        <div onclick="chooseJob(this)" data-name="Night Lord" class="interactive-dropdown-item"><p>Night Lord</p></div>
+                        <div onclick="chooseJob(this)" data-name="Shadower" class="interactive-dropdown-item"><p>Shadower</p></div>
+                        <div onclick="chooseJob(this)" data-name="Dual Blade" class="interactive-dropdown-item"><p>Dual Blade</p></div>
+                        <div onclick="chooseJob(this)" data-name="Night Walker" class="interactive-dropdown-item"><p>Night Walker</p></div>
+                        <div onclick="chooseJob(this)" data-name="Xenon" class="interactive-dropdown-item"><p>Xenon</p></div>
+                        <div onclick="chooseJob(this)" data-name="Phantom" class="interactive-dropdown-item"><p>Phantom</p></div>
+                        <div onclick="chooseJob(this)" data-name="Cadena" class="interactive-dropdown-item"><p>Cadena</p></div>
+                        <div onclick="chooseJob(this)" data-name="Khali" class="interactive-dropdown-item"><p>Khali</p></div>
+                        <div onclick="chooseJob(this)" data-name="Hoyoung" class="interactive-dropdown-item"><p>Hoyoung</p></div>
+                        <div class="interactive-dropdown-item-header"><p>Pirate</p></div>
+                        <div onclick="chooseJob(this)" data-name="Mo Xuan" class="interactive-dropdown-item"><p>Mo Xuan</p></div>
+                        <div onclick="chooseJob(this)" data-name="Buccaneer" class="interactive-dropdown-item"><p>Buccaneer</p></div>
+                        <div onclick="chooseJob(this)" data-name="Corsair" class="interactive-dropdown-item"><p>Corsair</p></div>
+                        <div onclick="chooseJob(this)" data-name="Cannoneer" class="interactive-dropdown-item"><p>Cannoneer</p></div>
+                        <div onclick="chooseJob(this)" data-name="Thunder Breaker" class="interactive-dropdown-item"><p>Thunder Breaker</p></div>
+                        <div onclick="chooseJob(this)" data-name="Mechanic" class="interactive-dropdown-item"><p>Mechanic</p></div>
+                        <div onclick="chooseJob(this)" data-name="Shade" class="interactive-dropdown-item"><p>Shade</p></div>
+                        <div onclick="chooseJob(this)" data-name="Angelic Buster" class="interactive-dropdown-item"><p>Angelic Buster</p></div>
+                        <div onclick="chooseJob(this)" data-name="Ark" class="interactive-dropdown-item"><p>Ark</p></div>
+                    </div>
+
+                </div>
+
+                <div id="interactive-skill">
+
+                    <div id="interactive-skill-tab">
+                        <div onclick="changeSkillTab(this, 0)" class="skill-tabs active-tab"><p>o</p></div>
+                        <div onclick="changeSkillTab(this, 1)" class="skill-tabs"><p>I</p></div>
+                        <div onclick="changeSkillTab(this, 2)" class="skill-tabs"><p>II</p></div>
+                        <div onclick="changeSkillTab(this, 3)" class="skill-tabs"><p>III</p></div>
+                        <div onclick="changeSkillTab(this, 4)" class="skill-tabs"><p>IV</p></div>
+                        <div onclick="changeSkillTab(this, 5)" class="skill-tabs"><p>V</p></div>
+                    </div>
+
+                    <div id="interactive-skill-wrapper">
+
+                        <div data-name="Hero" class="interactive-job-skills show">
+
+                            <div data-tab="0" class="intercative-job-skill-tab show">
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Three Snails" data-koreanname="달팽이 세마리">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Three_Snails.png" alt="Three Snails"></div>
+                                    <div class="skill-text">Three Snails</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Recovery" data-koreanname="회복">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Recovery.png" alt="Recovery"></div>
+                                    <div class="skill-text">Recovery</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Nimble Feet" data-koreanname="민첩한 몸놀림">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Nimble_Feet.png" alt="Nimble Feet"></div>
+                                    <div class="skill-text">Nimble Feet</div>
+                                </div>
+
+                            </div>
+
+                            <div data-tab="1" class="intercative-job-skill-tab">
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Iron Body" data-koreanname="아이언 바디">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Iron_Body.png" alt="Iron Body"></div>
+                                    <div class="skill-text">Iron Body</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Slash Blast" data-koreanname="슬래시 블러스트">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Slash_Blast.png" alt="Slash Blast"></div>
+                                    <div class="skill-text">Slash Blast</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Warrior Mastery" data-koreanname="워리어 마스터리">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Warrior_Mastery.png" alt="Warrior Mastery"></div>
+                                    <div class="skill-text">Warrior Mastery</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="War Leap" data-koreanname="워리어 리프">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_War_Leap.png" alt="War Leap"></div>
+                                    <div class="skill-text">War Leap</div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div data-name="Paladin" class="interactive-job-skills">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <div class="script-description">
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <tbody id="skill-body">
+
+                            <tr>
+                                <th><p>Name</p></th>
+                                <th><p>Korean name</p></th>
+                            </tr>
+
+                            <tr>
+                                <td><p id="skill-text-name"></p></td>
+                                <td><p id="skill-text-koreanname"></p></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                    
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+
+        <!-- OLD CODE THAT NEEDS CLEANUP AFTER IMPORTANT INFO HAS BEEN TRANSFERED TO THE NEW LAYOUT.
 
             <div class="script-description">
 
@@ -574,6 +1230,7 @@
             </div>
 
         </div>
+
 
         <div class="content-wrapper">
 
@@ -984,8 +1641,6 @@
                                 <td><p>skill/10112.img</p></td>
                             </tr>
 
-                            <!-- MISSING: Hayato -->
-
                             <tr>
                                 <td><p>Magician</p></td>
                                 <td><p>skill/200.img</p></td>
@@ -1072,10 +1727,6 @@
                                 <td><p>skill/14211.img</p></td>
                                 <td><p>skill/14212.img</p></td>
                             </tr>
-
-                            <!-- MISSING: Kanna -->
-
-                            <!-- MISSING: Lynn -->
 
                             <tr>
                                 <td><p>Bowman</p></td>
@@ -1194,8 +1845,6 @@
                                 <td><p>skill/6412.img</p></td>
                             </tr>
 
-                            <!-- NOT EXISTING IN MSW?: Khali -->
-
                             <tr>
                                 <td><p>Hoyoung</p></td>
                                 <td><p>skill/16000.img</p></td>
@@ -1299,6 +1948,8 @@
 
         </div>
 
+        -->
+
         <div id="avatar">
             <div id="avatar-bubble">
                 <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
@@ -1312,6 +1963,183 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
     <script src="./scripts/base.js"></script>
+
+    <script>
+
+        let OldWorld = false
+        let currentSelectedMap = ""
+
+        //let name = document.getElementById("map-text-name")
+        //let koreanname = document.getElementById("map-text-koreanname")
+        //let mapname = document.getElementById("map-text-mapname")
+        //let worldname = document.getElementById("map-text-worldname")
+        let dropdown = document.getElementById("interactive-dropdown-list")
+        let mapbody = document.getElementById("map-body")
+        let skillname = document.getElementById("skill-text-name")
+        let skillkoreanname = document.getElementById("skill-text-koreanname")
+        let jobname = document.getElementById("interactive-dropdown-job-name")
+
+        function selectMap(e){
+
+            if(e === undefined){
+                mapbody.innerHTML = ""
+                return
+            }
+
+            //name.innerHTML = e.dataset.name || ""
+            //koreanname.innerHTML = e.dataset.koreanname || ""
+            //mapname.innerHTML = e.dataset.mapname || ""
+            //worldname.innerHTML = e.dataset.worldname || ""
+
+            let names = e.dataset.name.split(",")
+            let koreannames = e.dataset.koreanname.split(",")
+
+            mapbody.innerHTML = `
+            <tr>
+                <th><p>Name</p></th>
+                <th><p>Korean name</p></th>
+            </tr>`
+
+            for(let i = 0; i < names.length; i++){
+                mapbody.innerHTML +=`
+                <tr>
+                    <td><p id="map-text-name">` + names[i] + `</p></td>
+                    <td><p id="map-text-koreanname">` + koreannames[i] + `</p></td>
+                </tr>`
+            }
+
+        }
+
+        function selectWorldType(e){
+
+            if(e === undefined){
+
+                document.querySelectorAll(".world-map").forEach(function(ev){
+
+                    if(ev.dataset.name == currentSelectedMap){
+                        e = ev
+                    }
+
+                })
+
+            }
+
+            let oldMap = e.querySelector(".map-old")
+            let newMap = e.querySelector(".map-new")
+
+            oldMap.classList.remove("show")
+            newMap.classList.remove("show")
+
+            if(OldWorld){
+                oldMap.classList.add("show")
+            }else{
+                newMap.classList.add("show")
+            }
+
+        }
+
+        function gotoMap(e){
+
+            if(e === undefined){ return }
+
+            document.querySelectorAll(".world-map").forEach(function(ev){
+                
+                if(ev.dataset.name == e.dataset.map){
+                    
+                    currentSelectedMap = ev.dataset.name
+                    ev.classList.add("show")
+
+                    if(e.dataset.map != "maple-world"){
+                        selectWorldType(ev)
+                    }
+
+                }else{
+                    ev.classList.remove("show")
+                }
+
+            })
+
+            selectMap()
+
+        }
+
+        function changeWorld(e){
+
+            OldWorld = !OldWorld
+            
+            if(OldWorld){
+                e.innerHTML = "<p>Old Map</p>"
+            }else{
+                e.innerHTML = "<p>New Map</p>"
+            }
+
+            selectWorldType()
+            selectMap()
+
+        }
+
+        function selectSkill(e){
+            skillname.innerHTML = e.dataset.name || ""
+            skillkoreanname.innerHTML = e.dataset.koreanname || ""
+        }
+
+        function showDropdown(){
+
+            let isShowing = dropdown.classList.contains("show")
+
+            if(isShowing){
+                dropdown.classList.remove("show")
+            }else{
+                dropdown.classList.add("show")
+            }
+
+        }
+
+        function chooseJob(e){
+
+            showDropdown()
+
+            jobname.innerHTML = e.dataset.name
+
+            document.querySelectorAll(".interactive-job-skills").forEach(function(ev){
+
+                if(e.dataset.name == ev.dataset.name){
+                    ev.classList.add("show")
+                }else{
+                    ev.classList.remove("show")
+                }
+
+            })
+
+            changeSkillTab(null, 0)
+
+        }
+        
+        function changeSkillTab(e, num){
+
+            document.querySelectorAll(".intercative-job-skill-tab").forEach(function(ev){
+
+                if(ev.dataset.tab == num){
+                    ev.classList.add("show")
+                }else{
+                    ev.classList.remove("show")
+                }
+
+            })
+
+            document.querySelectorAll(".skill-tabs").forEach(function(ev){
+                ev.classList.remove("active-tab")
+            })
+
+            if(e == null){
+                document.getElementById("interactive-skill-tab").firstElementChild.classList.add("active-tab")
+            }else{
+                e.classList.add("active-tab")
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>
