@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script>
+        const bgimage = new Image()
+        bgimage.src = "./images/bg.avif"
+        bgimage.onload = () => document.documentElement.classList.add('avif')
+        bgimage.onerror = () => document.documentElement.classList.add('no-avif')
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A MapleStory Worlds script/package.">
     <title>Pet System - MapleStory Worlds Creators Fansite</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
 
@@ -113,7 +119,7 @@
             font-size: 12px;
             box-shadow: 0px 0px 0px 2px #000C;
             border: 1px solid #FFF3;
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
         }
 
         #download-button p{
@@ -157,17 +163,26 @@
     <div id="background"></div>
 
     <div id="logo">
-        <a href="./"><img src="./images/logo.svg" width="216" alt="logo"></a>
+        <a href="./"><img src="./images/logo.svg" width="216px" height="121px" alt="logo"></a>
         <div>FANSITE</div>
     </div>
 
     <div id="content">
 
         <a href="./">
-            <div id="back-button"><i class="bi bi-caret-left-fill"></i> <p>Back</p></div>
+            <div id="back-button">
+                <svg class="icon">
+                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                </svg>
+                <p>Back</p>
+            </div>
         </a>
 
-        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button"><i class="bi bi-caret-up-fill"></i></div>
+        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button">
+            <svg class="icon">
+                <use href="./images/sprite.svg#caret-up-fill"></use>
+            </svg>
+        </div>
 
         <div id="title-text">
             <h1>Pet System</h1>
@@ -177,7 +192,9 @@
             <p id="download-version">v1.0</p>
             <a href="./files/Pets.modpackage" download>
                 <div id="download-button">
-                    <i class="bi bi-download"></i>
+                    <svg class="icon">
+                        <use href="./images/sprite.svg#download"></use>
+                    </svg>
                     <p>Download Package</p>
                 </div>
             </a>
@@ -207,12 +224,15 @@
                 <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
                 <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
             </div>
-            <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+
+            <picture>
+                <source srcset="./images/avatar.avif" type="image/avif">
+                <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+            </picture>
+
         </div>
 
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     
     <script src="./scripts/base.js"></script>
 

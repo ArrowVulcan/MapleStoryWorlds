@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script>
+        const bgimage = new Image()
+        bgimage.src = "./images/bg.avif"
+        bgimage.onload = () => document.documentElement.classList.add('avif')
+        bgimage.onerror = () => document.documentElement.classList.add('no-avif')
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A MapleStory Worlds Fansite with scripts, package, resources and more.">
     <title>MapleStory Worlds Creators Fansite</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
         #scripts-content, #guide-content{
@@ -24,7 +31,7 @@
             flex-direction: column;
             align-items: center;
             transition: transform 150ms;
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
         }
 
         .scripts-wrapper:hover{
@@ -77,7 +84,7 @@
             flex-direction: column;
             align-items: center;
             transition: transform 150ms;
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
             color: #FFF;
             padding-bottom: 5px;
             text-align: center;
@@ -182,7 +189,7 @@
     -->
 
     <div id="logo">
-        <a href="./"><img src="./images/logo.svg" width="216" alt="logo"></a>
+        <a href="./"><img src="./images/logo.svg" width="216px" height="121px" alt="logo"></a>
         <div>FANSITE</div>
     </div>
 
@@ -195,7 +202,9 @@
             <a href="./avatar">
                 <div class="guide-wrapper">
                     <div class="guide">
-                        <i class="bi bi-person-fill"></i>
+                        <svg class="icon">
+                            <use href="./images/sprite.svg#person-fill"></use>
+                        </svg>
                     </div>
                     <h2>Avatar</h2>
                 </div>
@@ -204,7 +213,9 @@
             <a href="./camera">
                 <div class="guide-wrapper">
                     <div class="guide">
-                        <i class="bi bi-camera-fill"></i>
+                        <svg class="icon">
+                            <use href="./images/sprite.svg#camera-fill"></use>
+                        </svg>
                     </div>
                     <h2>Camera</h2>
                 </div>
@@ -213,7 +224,9 @@
             <a href="./resources">
                 <div class="guide-wrapper">
                     <div class="guide">
-                        <i class="bi bi-collection-fill"></i>
+                        <svg class="icon">
+                            <use href="./images/sprite.svg#collection-fill"></use>
+                        </svg>
                     </div>
                     <h2>Resource<br>Finder</h2>
                 </div>
@@ -228,7 +241,12 @@
             <a href="./custom-portal">
                 <div class="scripts-wrapper">
                     <div class="scripts">
-                        <img src="./images/scripts/custom_portal.jpg" alt="custom_portal">
+                        
+                        <picture>
+                            <source srcset="./images/scripts/custom_portal.avif" type="image/avif">
+                            <img src="./images/scripts/custom_portal.jpg" alt="custom_portal">
+                        </picture>
+                        
                         <div class="script-title-bg">
                             <h2>Custom Portal</h2>
                         </div>
@@ -239,7 +257,12 @@
             <a href="./pet-system">
                 <div class="scripts-wrapper">
                     <div class="scripts">
-                        <img src="./images/scripts/pet_system.jpg" alt="pet_system">
+
+                        <picture>
+                            <source srcset="./images/scripts/pet_system.avif" type="image/avif">
+                            <img src="./images/scripts/pet_system.jpg" alt="pet_system">
+                        </picture>
+
                         <div class="script-title-bg">
                             <h2>Pet System</h2>
                         </div>
@@ -250,7 +273,12 @@
             <a href="./chairs">
                 <div class="scripts-wrapper">
                     <div class="scripts">
-                        <img src="./images/scripts/Chairs.jpg" alt="chairs">
+
+                        <picture>
+                            <source srcset="./images/scripts/Chairs.avif" type="image/avif">
+                            <img src="./images/scripts/Chairs.jpg" alt="chairs">
+                        </picture>
+
                         <div class="script-title-bg">
                             <h2>Chairs</h2>
                         </div>
@@ -265,7 +293,12 @@
                 <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
                 <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
             </div>
-            <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+
+            <picture>
+                <source srcset="./images/avatar.avif" type="image/avif">
+                <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+            </picture>
+
         </div>
 
     </div>

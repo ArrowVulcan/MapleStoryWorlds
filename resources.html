@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <script>
+        const bgimage = new Image()
+        bgimage.src = "./images/bg.avif"
+        bgimage.onload = () => document.documentElement.classList.add('avif')
+        bgimage.onerror = () => document.documentElement.classList.add('no-avif')
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A MapleStory Worlds resources information.">
     <title>Resources - MapleStory Worlds Creators Fansite</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-light.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
 
@@ -113,7 +119,7 @@
             font-size: 12px;
             box-shadow: 0px 0px 0px 2px #000C;
             border: 1px solid #FFF3;
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
         }
 
         #download-button p{
@@ -162,7 +168,7 @@
             padding: 20px;
             border: 1px solid rgb(255 255 255 / 40%);
             box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
         }
 
         #content-table li:hover{
@@ -252,7 +258,7 @@
 
         .map-dots img{
             position: absolute;
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
             pointer-events: all;
         }
 
@@ -273,7 +279,7 @@
             padding: 10px;
             border: 1px solid rgb(255 255 255 / 40%);
             box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
             display: flex;
             top: -50px;
             align-items: center;
@@ -284,7 +290,7 @@
         }
 
         .map-island:hover{
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
         }
 
         #map-version{
@@ -295,7 +301,7 @@
             padding: 10px;
             border: 1px solid rgb(255 255 255 / 40%);
             box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 60%);
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
             display: flex;
             top: -50px;
             right: 0px;
@@ -329,7 +335,7 @@
             background-color: #0005;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
-            cursor: url("./images/cursor/cursor_click.png"), auto;
+            cursor: url(./images/cursor/cursor_click.png), auto;
         }
 
         .skill-tabs:hover{
@@ -462,17 +468,26 @@
     <div id="background"></div>
 
     <div id="logo">
-        <a href="./"><img src="./images/logo.svg" width="216" alt="logo"></a>
+        <a href="./"><img src="./images/logo.svg" width="216px" height="121px" alt="logo"></a>
         <div>FANSITE</div>
     </div>
 
     <div id="content">
 
         <a href="./">
-            <div id="back-button"><i class="bi bi-caret-left-fill"></i> <p>Back</p></div>
+            <div id="back-button">
+                <svg class="icon">
+                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                </svg>
+                <p>Back</p>
+            </div>
         </a>
 
-        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button"><i class="bi bi-caret-up-fill"></i></div>
+        <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="scroll-top-button">
+            <svg class="icon">
+                <use href="./images/sprite.svg#caret-up-fill"></use>
+            </svg>
+        </div>
 
         <div id="title-text">
             <h1>Resource Finder</h1>
@@ -517,8 +532,11 @@
 
                         <div data-name="maple-world" class="world-map show">
 
-                            <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_World.png" alt="Maple World">
-                            
+                            <picture>
+                                <source srcset="./images/maps/WorldMap_Maple_World.avif" type="image/avif">
+                                <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_World.png" alt="Maple World">
+                            </picture>
+
                             <div class="map-islands">
                                 <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 40px; height: 30px; left: 124px; top: 70px;" data-map="maple-island"></div>
                                 <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 118px; height: 105px; left: 28px; top: 116px;" data-map="victoria-island"></div>
@@ -539,12 +557,20 @@
 
                         <div data-name="maple-island" class="world-map">
 
-                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back">
+                                <svg class="icon" style="width: 12px; height: 12px;">
+                                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                                </svg>
+                                <p>Maple World</p>
+                            </div>
 
                             <div class="map-new">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island.png" alt="Maple Island New">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Maple_Island.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island.png" alt="Maple Island New">
+                                </picture>
+
                                 <div class="map-dots">
                                     <img onclick="selectMap(this)" width="14px" height="14px" style="left: 190px; top: 137px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Maple Tree Hill" data-koreanname="단풍나무 언덕">
                                     <img onclick="selectMap(this)" width="14px" height="14px" style="left: 201px; top: 193px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Snail Park" data-koreanname="달팽이동산">
@@ -559,8 +585,11 @@
 
                             <div class="map-old">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island_old.png" alt="Maple Island Old">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Maple_Island_old.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island_old.png" alt="Maple Island Old">
+                                </picture>
+
                                 <div class="map-dots">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 446px; top: 212px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 372px; top: 286px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
@@ -572,12 +601,20 @@
 
                         <div data-name="victoria-island" class="world-map">
 
-                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back">
+                                <svg class="icon" style="width: 12px; height: 12px;">
+                                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                                </svg>
+                                <p>Maple World</p>
+                            </div>
 
                             <div class="map-new">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island.png" alt="Victoria Island New">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Victoria_Island.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island.png" alt="Victoria Island New">
+                                </picture>
+
                                 <div class="map-dots">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 87px; top: 271px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 256px; top: 309px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
@@ -600,8 +637,11 @@
 
                             <div class="map-old">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island_old.png" alt="Victoria Island Old">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Victoria_Island_old.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island_old.png" alt="Victoria Island Old">
+                                </picture>
+
                                 <div class="map-dots">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 93px; top: 366px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 282px; top: 368px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
@@ -618,12 +658,20 @@
 
                         <div data-name="rien" class="world-map">
 
-                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back">
+                                <svg class="icon" style="width: 12px; height: 12px;">
+                                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                                </svg>
+                                <p>Maple World</p>
+                            </div>
 
                             <div class="map-new">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien New">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Rien.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien New">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -632,8 +680,11 @@
 
                             <div class="map-old">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien Old">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Rien.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien Old">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -644,12 +695,20 @@
 
                         <div data-name="ereve" class="world-map">
 
-                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back">
+                                <svg class="icon" style="width: 12px; height: 12px;">
+                                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                                </svg>
+                                <p>Maple World</p>
+                            </div>
 
                             <div class="map-new">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve New">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Ereve.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve New">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -658,8 +717,11 @@
 
                             <div class="map-old">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve Old">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Ereve.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve Old">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -670,12 +732,20 @@
 
                         <div data-name="aqua-road" class="world-map">
 
-                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back">
+                                <svg class="icon" style="width: 12px; height: 12px;">
+                                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                                </svg>
+                                <p>Maple World</p>
+                            </div>
 
                             <div class="map-new">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road New">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Aqua_Road.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road New">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -684,8 +754,11 @@
 
                             <div class="map-old">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road Old">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Aqua_Road.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road Old">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -696,12 +769,20 @@
 
                         <div data-name="ludus-lake" class="world-map">
 
-                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back"><i class="bi bi-caret-left-fill"></i> <p>Maple World</p></div>
+                            <div onclick="gotoMap(this)" data-map="maple-world" id="map-back">
+                                <svg class="icon" style="width: 12px; height: 12px;">
+                                    <use href="./images/sprite.svg#caret-left-fill"></use>
+                                </svg>
+                                <p>Maple World</p>
+                            </div>
 
                             <div class="map-new">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake New">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Ludus_Lake.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake New">
+                                </picture>
+
                                 <div class="map-dots">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 310px; top: 111px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ludibrium" data-koreanname="루디브리엄">
                                     <img onclick="selectMap(this)" width="20px" height="20px" style="left: 181px; top: 378px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Omega Sector" data-koreanname="지구방위본부">
@@ -712,8 +793,11 @@
 
                             <div class="map-old">
 
-                                <img class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake Old">
-                                
+                                <picture>
+                                    <source srcset="./images/maps/WorldMap_Ludus_Lake.avif" type="image/avif">
+                                    <img class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake Old">
+                                </picture>
+
                                 <div class="map-dots">
 
                                 </div>
@@ -1955,12 +2039,15 @@
                 <a href="https://github.com/ArrowVulcan"><img id="github-logo" src="./images/github.png" alt="github"></a>
                 <a id="msw-a" href="https://maplestoryworlds.nexon.com/en/profile/Q59HM"><img id="msw-logo" src="./images/logo.png" alt="MSW-logo"></a>
             </div>
-            <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+
+            <picture>
+                <source srcset="./images/avatar.avif" type="image/avif">
+                <img src="./images/avatar.png" width="496" height="496" alt="avatar">
+            </picture>
+
         </div>
 
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 
     <script src="./scripts/base.js"></script>
 
