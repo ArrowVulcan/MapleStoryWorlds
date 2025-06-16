@@ -260,6 +260,8 @@
             position: absolute;
             cursor: url(./images/cursor/cursor_click.png), auto;
             pointer-events: all;
+            width: 3.2%;
+            height: 4.2%;
         }
 
         .world-map{
@@ -332,7 +334,9 @@
             align-items: center;
             width: 50px;
             height: 24px;
-            background-color: #0005;
+            background-color: rgb(61 64 118);
+            border: 1px solid #000A;
+            border-bottom: 1px solid #0005;
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
             cursor: url(./images/cursor/cursor_click.png), auto;
@@ -343,9 +347,12 @@
         }
 
         #interactive-skill-wrapper{
-            width: 100%;
+            width: 60%;
+            min-width: 330px;
             display: flex;
             background-color: rgb(69 74 135);
+            border: 1px solid #FFF5;
+            box-shadow: 0px 0px 0px 1px #0005;
             border-radius: 8px;
             padding: 2px;
             max-height: 360px;
@@ -367,6 +374,8 @@
             width: calc(50% - 1px);
             cursor: url(./images/cursor/cursor_click.png), auto;
             max-height: 57px;
+            outline: 1px solid #FFF3;
+            outline-offset: -2px;
         }
 
         .skill-wrapper:hover{
@@ -443,6 +452,8 @@
             padding: 10px;
             margin: 4px 0px;
             text-align: center;
+            font-weight: bold;
+            font-size: 14px;
         }
 
         .interactive-dropdown-item:hover{
@@ -458,6 +469,21 @@
             display: none;
             width: 100%;
             gap: 2px;
+        }
+
+        @media only screen and (max-width: 406px){
+
+            .skill-tabs{
+                width: 36px;
+            }
+
+            #interactive-skill-wrapper{
+                min-width: 236px;
+            }
+
+            .skill-text{
+                font-size: 9px;
+            }
         }
 
     </style>
@@ -534,16 +560,16 @@
 
                             <picture>
                                 <source srcset="./images/maps/WorldMap_Maple_World.avif" type="image/avif">
-                                <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Maple_World.png" alt="Maple World">
+                                <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Maple_World.png" alt="Maple World">
                             </picture>
 
                             <div class="map-islands">
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 40px; height: 30px; left: 124px; top: 70px;" data-map="maple-island"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 118px; height: 105px; left: 28px; top: 116px;" data-map="victoria-island"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 81px; height: 61px; left: 156px; top: 171px;" data-map="aqua-road"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 133px; height: 100px; left: 201px; top: 234px;" data-map="ludus-lake"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 55px; height: 72px; left: 163px; top: 93px;" data-map="ereve"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 58px; height: 81px; left: 25px; top: 224px;" data-map="rien"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 6.3%; height: 6.5%; left: 19.4%; top: 15%;" data-map="maple-island"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 18.4%; height: 22.4%; left: 4.5%; top: 24.6%;" data-map="victoria-island"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 13%; height: 12.5%; left: 24.5%; top: 36%;" data-map="aqua-road"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 21%; height: 21.5%; left: 31.2%; top: 50%;" data-map="ludus-lake"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 8.7%; height: 15%; left: 25.5%; top: 19.9%;" data-map="ereve"></div>
+                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 9.1%; height: 18%; left: 4%; top: 47.5%;" data-map="rien"></div>
                             </div>
 
                             <!--
@@ -568,17 +594,17 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Maple_Island.avif" type="image/avif">
-                                    <img width="640" height="452" class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island.png" alt="Maple Island New">
+                                    <img width="640px" height="452px" class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island.png" alt="Maple Island New">
                                 </picture>
 
                                 <div class="map-dots">
-                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 190px; top: 137px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Maple Tree Hill" data-koreanname="단풍나무 언덕">
-                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 201px; top: 193px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Snail Park" data-koreanname="달팽이동산">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 297px; top: 214px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
-                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 332px; top: 240px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Entrance to Adventurer Training Center" data-koreanname="모험가의 수련장 입구">
-                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 368px; top: 263px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Split Road of Destiny" data-koreanname="선택의 갈림길">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 387px; top: 292px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
-                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 437px; top: 305px;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Port" data-koreanname="선착장">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 29.7%; top: 30%;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Maple Tree Hill" data-koreanname="단풍나무 언덕">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 31.3%; top: 42.5%;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Snail Park" data-koreanname="달팽이동산">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 46.4%; top: 47%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 51.7%; top: 52.7%;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Entrance to Adventurer Training Center" data-koreanname="모험가의 수련장 입구">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 57.3%; top: 57.6%;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Split Road of Destiny" data-koreanname="선택의 갈림길">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 60.4%; top: 64.2%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
+                                    <img onclick="selectMap(this)" width="14px" height="14px" style="left: 68%; top: 67%;" src="./images/maps/yellow_dot.png" alt="yellow dot" data-name="Port" data-koreanname="선착장">
                                 </div>
 
                             </div>
@@ -587,12 +613,12 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Maple_Island_old.avif" type="image/avif">
-                                    <img width="640" height="455" class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island_old.png" alt="Maple Island Old">
+                                    <img width="640px" height="455px" class="interactive-map-image" src="./images/maps/WorldMap_Maple_Island_old.png" alt="Maple Island Old">
                                 </picture>
 
                                 <div class="map-dots">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 446px; top: 212px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 372px; top: 286px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 69.5%; top: 46.3%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Amherst, Amherst Weapon Store, Amherst General Store, Amherst House" data-koreanname="암허스트, 암허스트무기상점, 암허스트잡화상점, 암허스트민가">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 58%; top: 62.5%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Southperry, Southperry Armor Shop" data-koreanname="사우스페리, 사우스페리 방어구상점">
                                 </div>
 
                             </div>
@@ -612,25 +638,25 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Victoria_Island.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island.png" alt="Victoria Island New">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island.png" alt="Victoria Island New">
                                 </picture>
 
                                 <div class="map-dots">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 87px; top: 271px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 256px; top: 309px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 389px; top: 350px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Nautilus" data-koreanname="노틸러스">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 398px; top: 233px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinia" data-koreanname="엘리니아">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 292px; top: 136px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Perion" data-koreanname="페리온">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 188px; top: 171px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning City" data-koreanname="커닝시티">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 276px; top: 223px;" src="./images/maps/purple_dot.png" alt="purple dot" data-name="Six Path Crossway" data-koreanname="여섯갈래길">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 314px; top: 385px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Partem, Karuppa Town" data-koreanname="파르템, 카루파의 마을">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 489px; top: 210px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Elluel" data-koreanname="에우렐">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 112px; top: 378px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Mushroom Castle" data-koreanname="버섯의 성">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 393px; top: 187px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinel" data-koreanname="요정학원 엘리넬">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 473px; top: 302px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Elodin" data-koreanname="엘로딘">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 557px; top: 258px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Gold Beach" data-koreanname="골드비치">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 458px; top: 131px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Magician Association" data-koreanname="마법사 협회">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 118px; top: 219px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning Tower" data-koreanname="커닝타워">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 13.6%; top: 57.6%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 40%; top: 65.7%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 60.8%; top: 74.4%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Nautilus" data-koreanname="노틸러스">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 62.2%; top: 49.6%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinia" data-koreanname="엘리니아">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 45.7%; top: 29%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Perion" data-koreanname="페리온">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 29.4%; top: 36.5%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning City" data-koreanname="커닝시티">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 43.3%; top: 47.4%;" src="./images/maps/purple_dot.png" alt="purple dot" data-name="Six Path Crossway" data-koreanname="여섯갈래길">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 49%; top: 82%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Partem, Karuppa Town" data-koreanname="파르템, 카루파의 마을">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 76.5%; top: 44.5%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Elluel" data-koreanname="에우렐">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 17.5%; top: 80.4%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Mushroom Castle" data-koreanname="버섯의 성">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 61.4%; top: 39.7%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinel" data-koreanname="요정학원 엘리넬">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 73.95%; top: 64.2%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Elodin" data-koreanname="엘로딘">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 87%; top: 55%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Gold Beach" data-koreanname="골드비치">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 71.5%; top: 28%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Magician Association" data-koreanname="마법사 협회">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 18.5%; top: 46.7%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning Tower" data-koreanname="커닝타워">
                                 </div>
 
                             </div>
@@ -639,17 +665,17 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Victoria_Island_old.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island_old.png" alt="Victoria Island Old">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Victoria_Island_old.png" alt="Victoria Island Old">
                                 </picture>
 
                                 <div class="map-dots">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 93px; top: 366px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 282px; top: 368px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 474px; top: 385px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Nautilus" data-koreanname="노틸러스">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 437px; top: 245px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinia" data-koreanname="엘리니아">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 237px; top: 77px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Perion" data-koreanname="페리온">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 87px; top: 177px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning City" data-koreanname="커닝시티">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 265px; top: 252px;" src="./images/maps/purple_dot.png" alt="purple dot" data-name="Sleepywoods" data-koreanname="슬리피우드">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 14.5%; top: 77.4%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Lith Harbor" data-koreanname="리스항구">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 44.2%; top: 78%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Henesys, Henesys Market, Henesys Park" data-koreanname="헤네시스, 헤네시스 시장, 헤네시스공원">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 74%; top: 81.5%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Nautilus" data-koreanname="노틸러스">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 68.2%; top: 52%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ellinia" data-koreanname="엘리니아">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 37%; top: 16%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Perion" data-koreanname="페리온">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 14%; top: 37.4%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Kerning City" data-koreanname="커닝시티">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 41.5%; top: 53.5%;" src="./images/maps/purple_dot.png" alt="purple dot" data-name="Sleepywoods" data-koreanname="슬리피우드">
                                 </div>
 
                             </div>
@@ -669,7 +695,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Rien.avif" type="image/avif">
-                                    <img width="640" height="471" class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien New">
+                                    <img width="640px" height="471px" class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien New">
                                 </picture>
 
                                 <div class="map-dots">
@@ -682,7 +708,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Rien.avif" type="image/avif">
-                                    <img width="640" height="471" class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien Old">
+                                    <img width="640px" height="471px" class="interactive-map-image" src="./images/maps/WorldMap_Rien.png" alt="Rien Old">
                                 </picture>
 
                                 <div class="map-dots">
@@ -706,7 +732,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Ereve.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve New">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve New">
                                 </picture>
 
                                 <div class="map-dots">
@@ -719,7 +745,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Ereve.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve Old">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Ereve.png" alt="Ereve Old">
                                 </picture>
 
                                 <div class="map-dots">
@@ -743,7 +769,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Aqua_Road.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road New">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road New">
                                 </picture>
 
                                 <div class="map-dots">
@@ -756,7 +782,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Aqua_Road.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road Old">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Aqua_Road.png" alt="Aqua Road Old">
                                 </picture>
 
                                 <div class="map-dots">
@@ -780,13 +806,13 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Ludus_Lake.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake New">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake New">
                                 </picture>
 
                                 <div class="map-dots">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 310px; top: 111px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ludibrium" data-koreanname="루디브리엄">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 181px; top: 378px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Omega Sector" data-koreanname="지구방위본부">
-                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 505px; top: 337px;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Korean Folk Town" data-koreanname="아랫마을">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 48.3%; top: 24%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Ludibrium" data-koreanname="루디브리엄">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 28.2%; top: 80.3%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Omega Sector" data-koreanname="지구방위본부">
+                                    <img onclick="selectMap(this)" width="20px" height="20px" style="left: 79%; top: 71.3%;" src="./images/maps/blue_dot.png" alt="blue dot" data-name="Korean Folk Town" data-koreanname="아랫마을">
                                 </div>
 
                             </div>
@@ -795,7 +821,7 @@
 
                                 <picture>
                                     <source srcset="./images/maps/WorldMap_Ludus_Lake.avif" type="image/avif">
-                                    <img width="640" height="470" class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake Old">
+                                    <img width="640px" height="470px" class="interactive-map-image" src="./images/maps/WorldMap_Ludus_Lake.png" alt="Ludus Lake Old">
                                 </picture>
 
                                 <div class="map-dots">
