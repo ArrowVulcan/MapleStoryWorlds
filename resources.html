@@ -201,6 +201,12 @@
 
         .script-description p{
             margin: 4px 0px;
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text !important;
         }
 
         pre, code{
@@ -281,6 +287,10 @@
             height: 4.2%;
         }
 
+        .map-dots img:hover{
+            filter: brightness(1.2);
+        }
+
         .world-map{
             display: none;
         }
@@ -310,6 +320,7 @@
 
         .map-island:hover{
             cursor: url(./images/cursor/cursor_click.png), auto;
+            filter: brightness(1.2);
         }
 
         #map-version{
@@ -514,6 +525,44 @@
 </head>
 <body>
 
+    <!-- CLIP PATHS START -->
+
+    <svg width="0" height="0">
+        <clipPath id="path-maple-island">
+            <polygon points="27 5, 33 8, 40 14, 36 22, 25 26, 19 30, 8 22, 0 13, 3 8, 12 3, 19 1"></polygon>
+        </clipPath>
+    </svg>
+
+
+    <svg width="0" height="0">
+        <clipPath id="path-victoria-island">
+            <polygon points="92 104, 99 101, 102 93, 104 84, 105 75, 113 70, 115 60, 113 54, 99 48, 97 35, 91 22, 87 12, 84 6, 71 3, 64 8, 60 11, 42 3, 32 6, 21 8, 14 13, 14 19, 9 24, 7 36, 7 42, 2 50, 1 60, 5 62, 10 72, 12 82, 17 88, 29 89, 42 86, 48 83, 63 84, 72 82, 75 98, 78 104, 84 105"></polygon>
+        </clipPath>
+    </svg>
+
+
+    <svg width="0" height="0">
+        <clipPath id="path-aqua-road">
+            <polygon points="3 61, 84 61, 83 33, 75 34, 69 30, 61 25, 61 17, 66 11, 69 2, 57 0, 50 6, 44 4, 41 9, 33 15, 26 11, 17 14, 6 21, 0 33, 1 57"></polygon>
+        </clipPath>
+    </svg>
+
+
+    <svg width="0" height="0">
+        <clipPath id="path-ereve">
+            <polygon points="18 75, 70 75, 70 60, 86 56, 69 48, 64 43, 64 28, 86 18, 85 14, 56 6, 49 0, 30 10, 16 17, 13 23, 0 29, 16 32, 23 47, 14 49, 16 69"></polygon>
+        </clipPath>
+    </svg>
+
+    <svg width="0" height="0">
+        <clipPath id="path-rien">
+            <polygon points="4 83, 56 83, 56 55, 45 56, 42 49, 36 44, 31 41, 38 36, 44 36, 49 42, 58 38, 60 33, 57 24, 48 11, 43 8, 36 13, 21 2, 12 11, 11 22, 4 26, 5 46, 1 58, 1 81"></polygon>
+        </clipPath>
+    </svg>
+
+    <!-- CLIP PATHS END -->
+
+
     <div id="background"></div>
 
     <div id="logo">
@@ -587,12 +636,12 @@
                             </picture>
 
                             <div class="map-islands">
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 6.3%; height: 6.5%; left: 19.4%; top: 15%;" data-map="maple-island"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 18.4%; height: 22.4%; left: 4.5%; top: 24.6%;" data-map="victoria-island"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 13%; height: 12.5%; left: 24.5%; top: 36%;" data-map="aqua-road"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 21%; height: 21.5%; left: 31.2%; top: 50%;" data-map="ludus-lake"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 8.7%; height: 15%; left: 25.5%; top: 19.9%;" data-map="ereve"></div>
-                                <div class="map-island" onclick="gotoMap(this)" style="position: absolute; background-color: #F005; width: 9.1%; height: 18%; left: 4%; top: 47.5%;" data-map="rien"></div>
+                                <img class="map-island" onclick="gotoMap(this)" style="clip-path: url(#path-maple-island); position: absolute; left: 19.4%; top: 15.1%; width: 6.4%; height: auto;" width="41px" height="30px" src="./images/maps/interactions/maple_island.png" alt="maple island" data-map="maple-island">
+                                <img class="map-island" onclick="gotoMap(this)" style="clip-path: url(#path-victoria-island); position: absolute; left: 4.65%; top: 24.6%; width: 18.1%; height: auto;" width="116px" height="107px" src="./images/maps/interactions/victoria_island.png" alt="victoria island" data-map="victoria-island">
+                                <img class="map-island" onclick="gotoMap(this)" style="clip-path: url(#path-aqua-road); position: absolute; left: 24.25%; top: 36.35%; width: 13.2%; height: auto;" width="85px" height="63px" src="./images/maps/interactions/aqua_road.png" alt="aqua road" data-map="aqua-road">
+                                <img class="map-island" onclick="gotoMap(this)" style="clip-path: url(#path-ereve); position: absolute; left: 23.15%; top: 19%; width: 13.6%; height: auto;" width="87px" height="77px" src="./images/maps/interactions/ereve.png" alt="ereve" data-map="ereve">
+                                <img class="map-island" onclick="gotoMap(this)" style="clip-path: url(#path-rien); position: absolute; left: 3.8%; top: 47.8%; width: 9.4%; height: auto;" width="60px" height="84px" src="./images/maps/interactions/rien.png" alt="rien" data-map="rien">
+                                <img class="map-island" onclick="gotoMap(this)" style="clip-path: url(#path-ludus-lake); position: absolute; left: 31.2%; top: 49.7%; width: 21%; height: auto;" width="134px" height="103px" src="./images/maps/interactions/ludus_lake.png" alt="ludus lake" data-map="ludus-lake">
                             </div>
 
                             <!--
@@ -1219,7 +1268,6 @@
 
                         </div>
 
-
                         <div data-name="Paladin" class="interactive-job-skills">
 
                             <div data-tab="0" class="intercative-job-skill-tab show">
@@ -1458,6 +1506,84 @@
                                     <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/paladin/Skill_Hammers_Of_The_Righteous.png" alt="Hammers of the Righteous"></div>
                                     <div class="skill-text">Hammers of the Righteous</div>
                                 </div>
+
+                            </div>
+
+                        </div>
+
+                        <div data-name="Dark Knight" class="interactive-job-skills">
+
+                            <div data-tab="0" class="intercative-job-skill-tab show">
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Recovery" data-koreanname="회복">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Recovery.png" alt="Recovery"></div>
+                                    <div class="skill-text">Recovery</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Nimble Feet" data-koreanname="민첩한 몸놀림">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Nimble_Feet.png" alt="Nimble Feet"></div>
+                                    <div class="skill-text">Nimble Feet</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Three Snails" data-koreanname="달팽이 세마리">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Three_Snails.png" alt="Three Snails"></div>
+                                    <div class="skill-text">Three Snails</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Blessing of the Fairy" data-koreanname="정령의 축복">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Blessing_Of_The_Fairy.png" alt="Blessing of the Fairy"></div>
+                                    <div class="skill-text">Blessing of the Fairy</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Empress's Blessing" data-koreanname="여제의 축복">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Blessing_Of_The_Fairy.png" alt="Empress's Blessing"></div>
+                                    <div class="skill-text">Empress's Blessing</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Link Manager" data-koreanname="링크 매니지먼트">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/beginner/Skill_Link_Manager.png" alt="Link Manager"></div>
+                                    <div class="skill-text">Link Manager</div>
+                                </div>
+
+                            </div>
+
+                            <div data-tab="1" class="intercative-job-skill-tab show">
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Slash Blast" data-koreanname="슬래시 블러스트">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Slash_Blast.png" alt="Slash Blast"></div>
+                                    <div class="skill-text">Slash Blast</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="War Leap" data-koreanname="워리어 리프">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_War_Leap.png" alt="War Leap"></div>
+                                    <div class="skill-text">War Leap</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Upward Charge" data-koreanname="어퍼 차지">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Upward_Charge.png" alt="Upward Charge"></div>
+                                    <div class="skill-text">Upward Charge</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Leap Attack" data-koreanname="리프 어택">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Leap_Attack.png" alt="Leap Attack"></div>
+                                    <div class="skill-text">Leap Attack</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Iron Body" data-koreanname="아이언 바디">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Iron_Body.png" alt="Iron Body"></div>
+                                    <div class="skill-text">Iron Body</div>
+                                </div>
+
+                                <div onclick="selectSkill(this)" class="skill-wrapper" data-name="Warrior Mastery" data-koreanname="워리어 마스터리">
+                                    <div class="skill-icon"><img width="32px" height="32px" src="./images/skills/warrior/Skill_Warrior_Mastery.png" alt="Warrior Mastery"></div>
+                                    <div class="skill-text">Warrior Mastery</div>
+                                </div>
+
+                            </div>
+
+                            <div data-tab="2" class="intercative-job-skill-tab show">
+
+
 
                             </div>
 
