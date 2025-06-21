@@ -585,7 +585,209 @@ const job_skills = {
     ],
 
     Dawn_Warrior: [
-        
+
+        Beginner,
+        [
+            {
+                "name": "Rising Sun",
+                "koreanname": "라이징 선",
+                "icon": "dawn_warrior/Skill_Rising_Sun.png"
+            },
+            {
+                "name": "Falling Moon",
+                "koreanname": "폴링 문",
+                "icon": "dawn_warrior/Skill_Falling_Moon.png"
+            },
+            {
+                "name": "Solar Slash",
+                "koreanname": "솔라 슬래시",
+                "icon": "dawn_warrior/Skill_Solar_Slash.png"
+            },
+            {
+                "name": "Soul Element",
+                "koreanname": "엘리멘트 : 소울",
+                "icon": "dawn_warrior/Skill_Soul_Element.png"
+            },
+            {
+                "name": "Soul of the Guardian",
+                "koreanname": "소울 가디언",
+                "icon": "dawn_warrior/Skill_Soul_Of_The_Guardian.png"
+            },
+            {
+                "name": "Inner Voice",
+                "koreanname": "이너 보이스",
+                "icon": "dawn_warrior/Skill_Inner_Voice.png"
+            },
+            {
+                "name": "Soul Leap",
+                "koreanname": "소울 리프",
+                "icon": "dawn_warrior/Skill_Soul_Leap.png"
+            },
+        ],
+        [
+            {
+                "name": "Celestial Vision",
+                "koreanname": "셀레스티얼 비전",
+                "icon": "dawn_warrior/Skill_Celestial_Vision.png"
+            },
+            {
+                "name": "Cosmic Matter",
+                "koreanname": "코스믹 매터",
+                "icon": "dawn_warrior/Skill_Cosmic_Matter.png"
+            },
+            {
+                "name": "Equinox Cycle",
+                "koreanname": "솔루나 타임",
+                "icon": "dawn_warrior/Skill_Equinox_Cycle.png"
+            },
+            {
+                "name": "Soul Blessing",
+                "koreanname": "소울 블레싱",
+                "icon": "dawn_warrior/Skill_Soul_Blessing.png"
+            },
+            {
+                "name": "Soul Speed",
+                "koreanname": "님블 핑거",
+                "icon": "dawn_warrior/Skill_Soul_Speed.png"
+            },
+            {
+                "name": "Divine Hand",
+                "koreanname": "이너 트러스트",
+                "icon": "dawn_warrior/Skill_Divine_Hand.png"
+            },
+            {
+                "name": "Sword Mastery",
+                "koreanname": "소드 마스터리",
+                "icon": "dawn_warrior/Skill_Sword_Mastery.png"
+            },
+            {
+                "name": "Physical Training",
+                "koreanname": "피지컬 트레이닝",
+                "icon": "dawn_warrior/Skill_Physical_Training.png"
+            },
+        ],
+        [
+            {
+                "name": "Celestial Vision II",
+                "koreanname": "셀레스티얼 비전Ⅱ",
+                "icon": "dawn_warrior/Skill_Celestial_Vision_II.png"
+            },
+            {
+                "name": "Cosmic Shower",
+                "koreanname": "코스믹 샤워",
+                "icon": "dawn_warrior/Skill_Cosmic_Shower.png"
+            },
+            {
+                "name": "Bluster",
+                "koreanname": "라우드 러쉬",
+                "icon": "dawn_warrior/Skill_Bluster.png"
+            },
+            {
+                "name": "True Sight",
+                "koreanname": "트루 사이트",
+                "icon": "dawn_warrior/Skill_True_Sight.png"
+            },
+            {
+                "name": "Soul Blessing II",
+                "koreanname": "소울 블레싱Ⅱ",
+                "icon": "dawn_warrior/Skill_Soul_Blessing_II.png"
+            },
+            {
+                "name": "Equinox Mastery",
+                "koreanname": "솔루나 마스터리",
+                "icon": "dawn_warrior/Skill_Equinox_Mastery.png"
+            },
+            {
+                "name": "Will of Steel",
+                "koreanname": "윌 오브 스틸",
+                "icon": "dawn_warrior/Skill_Will_Of_Steel.png"
+            },
+            {
+                "name": "Inner Shout",
+                "koreanname": "이너 샤우트",
+                "icon": "dawn_warrior/Skill_Inner_Shout.png"
+            },
+        ],
+        [
+            {
+                "name": "Call of Cygnus",
+                "koreanname": "시그너스 나이츠",
+                "icon": "dawn_warrior/Skill_Call_Of_Cygnus.png"
+            },
+            {
+                "name": "Cygnus Knights' Will",
+                "koreanname": "시그너스 기사단의 의지",
+                "icon": "dawn_warrior/Skill_Cygnus_Knights_Will.png"
+            },
+            {
+                "name": "Celestial Vision III",
+                "koreanname": "셀레스티얼 비전Ⅲ",
+                "icon": "dawn_warrior/Skill_Celestial_Vision_III.png"
+            },
+            {
+                "name": "Cosmic Burst",
+                "koreanname": "코스믹 버스트",
+                "icon": "dawn_warrior/Skill_Cosmic_Burst.png"
+            },
+            {
+                "name": "Equinox Slash",
+                "koreanname": "솔루나 슬래시",
+                "icon": "dawn_warrior/Skill_Equinox_Slash.png"
+            },
+            {
+                "name": "Impaling Rays",
+                "koreanname": "소울 페네트레이션",
+                "icon": "dawn_warrior/Skill_Impaling_Rays.png"
+            },
+            {
+                "name": "Soul Blessing III",
+                "koreanname": "소울 블레싱Ⅲ",
+                "icon": "dawn_warrior/Skill_Soul_Blessing_III.png"
+            },
+            {
+                "name": "Soul Pledge",
+                "koreanname": "소울 플레지",
+                "icon": "dawn_warrior/Skill_Soul_Pledge.png"
+            },
+            {
+                "name": "Student of the Blade",
+                "koreanname": "소드 엑스퍼트",
+                "icon": "dawn_warrior/Skill_Student_Of_The_Blade.png"
+            },
+            {
+                "name": "Unpredictable",
+                "koreanname": "언포시어블",
+                "icon": "dawn_warrior/Skill_Unpredictable.png"
+            },
+            {
+                "name": "Master of the Sword",
+                "koreanname": "마스터 오브 더 소드",
+                "icon": "dawn_warrior/Skill_Master_Of_The_Sword.png"
+            },
+        ],
+        [
+            {
+                "name": "Rift of Damnation",
+                "koreanname": "엘리시온",
+                "icon": "dawn_warrior/Skill_Rift_Of_Damnation.png"
+            },
+            {
+                "name": "Soul Eclipse",
+                "koreanname": "소울 이클립스",
+                "icon": "dawn_warrior/Skill_Soul_Eclipse.png"
+            },
+            {
+                "name": "Flare Slash",
+                "koreanname": "플레어 슬래시",
+                "icon": "dawn_warrior/Skill_Flare_Slash.png"
+            },
+            {
+                "name": "Cosmos",
+                "koreanname": "코스모스",
+                "icon": "dawn_warrior/Skill_Cosmos.png"
+            },
+        ]
+
     ]
 
 }
