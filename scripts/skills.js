@@ -788,6 +788,203 @@ const job_skills = {
             },
         ]
 
+    ],
+    Mihile: [
+        Beginner,
+        [
+            {
+                "name": "Shining Pierce",
+                "koreanname": "샤이닝 피어스",
+                "icon": "mihile/Skill_Shining_Pierce.png"
+            },
+            {
+                "name": "Royal Guard",
+                "koreanname": "로얄 가드",
+                "icon": "mihile/Skill_Royal_Guard.png"
+            },
+            {
+                "name": "Weightless Heart",
+                "koreanname": "소울 점프",
+                "icon": "mihile/Skill_Weightless_Heart.png"
+            },
+            {
+                "name": "Soul Shield",
+                "koreanname": "소울 실드",
+                "icon": "mihile/Skill_Soul_Shield.png"
+            },
+            {
+                "name": "Soul Devotion",
+                "koreanname": "소울 어질리티",
+                "icon": "mihile/Skill_Soul_Devotion.png"
+            },
+            {
+                "name": "Righteous Indignation",
+                "koreanname": "소울 어택",
+                "icon": "mihile/Skill_Righteous_Indignation.png"
+            }
+        ],
+        [
+            {
+                "name": "Four-Point Assault",
+                "koreanname": "소울 어썰트",
+                "icon": "mihile/Skill_Four_Point_Assault.png"
+            },
+            {
+                "name": "Radiant Driver",
+                "koreanname": "샤이닝 체이스",
+                "icon": "mihile/Skill_Radiant_Drive.png"
+            },
+            {
+                "name": "Vertical Radiant Driver",
+                "koreanname": "버티컬 샤이닝 체이스",
+                "icon": "mihile/Skill_Vertical_Radiant_Driver.png"
+            },
+            {
+                "name": "Encourage",
+                "koreanname": "인커리지",
+                "icon": "mihile/Skill_Encourage.png"
+            },
+            {
+                "name": "Agile Swords",
+                "koreanname": "소드 액셀레이션",
+                "icon": "mihile/Skill_Agile_Swords.png"
+            },
+            {
+                "name": "Sword Mastery",
+                "koreanname": "소드 마스터리",
+                "icon": "mihile/Skill_Sword_Mastery.png"
+            },
+            {
+                "name": "Final Attack",
+                "koreanname": "파이널 어택",
+                "icon": "mihile/Skill_Final_Attack.png"
+            },
+            {
+                "name": "Physical Training",
+                "koreanname": "피지컬 트레이닝",
+                "icon": "mihile/Skill_Physical_Training.png"
+            },
+        ],
+        [
+            {
+                "name": "Soul Release",
+                "koreanname": "소울 릴리즈",
+                "icon": "mihile/Skill_Soul_Release.png"
+            },
+            {
+                "name": "Magic Crash",
+                "koreanname": "매직 크래쉬",
+                "icon": "mihile/Skill_Magic_Crash.png"
+            },
+            {
+                "name": "Soul Link",
+                "koreanname": "소울 링크",
+                "icon": "mihile/Skill_Soul_Link.png"
+            },
+            {
+                "name": "Advanced Royal Guard",
+                "koreanname": "어드밴스드 로얄 가드",
+                "icon": "mihile/Skill_Advanced_Royal_Guard.png"
+            },
+            {
+                "name": "Self Recovery",
+                "koreanname": "셀프 리커버리",
+                "icon": "mihile/Skill_Self_Recovery.png"
+            },
+            {
+                "name": "Loyal Oath",
+                "koreanname": "로얄 오쓰",
+                "icon": "mihile/Skill_Loyal_Oath.png"
+            },
+            {
+                "name": "Advanced Righteous Indignation",
+                "koreanname": "어드밴스드 소울 어택",
+                "icon": "mihile/Skill_Advanced_Righteous_Indignation.png"
+            },
+            {
+                "name": "Offensive Defense",
+                "koreanname": "오펜시브 디펜스",
+                "icon": "mihile/Skill_Offensive_Defense.png"
+            }
+        ],
+        [
+            {
+                "name": "Call of Cygnus",
+                "koreanname": "시그너스 나이츠",
+                "icon": "mihile/Skill_Call_Of_Cygnus.png"
+            },
+            {
+                "name": "Cygnus Knights' Will",
+                "koreanname": "시그너스 기사단의 의지",
+                "icon": "mihile/Skill_Cygnus_Knights_Will.png"
+            },
+            {
+                "name": "Radiant Cross",
+                "koreanname": "샤이닝 크로스",
+                "icon": "mihile/Skill_Radiant_Cross.png"
+            },
+            {
+                "name": "Rolling Soul",
+                "koreanname": "소울 레이지",
+                "icon": "mihile/Skill_Rolling_Soul.png"
+            },
+            {
+                "name": "Install Shield",
+                "koreanname": "인스톨 실드",
+                "icon": "mihile/Skill_Install_Shield.png"
+            },
+            {
+                "name": "Advanced Offensive Defense",
+                "koreanname": "어드밴스드 오펜시브 디펜스",
+                "icon": "mihile/Skill_Advanced_Offensive_Defense.png"
+            },
+            {
+                "name": "Soul Asylum",
+                "koreanname": "어드밴스드 소울 실드",
+                "icon": "mihile/Skill_Soul_Asylum.png"
+            },
+            {
+                "name": "Expert Sword Mastery",
+                "koreanname": "어드밴스드 소드 마스터리",
+                "icon": "mihile/Skill_Expert_Sword_Mastery.png"
+            },
+            {
+                "name": "Advanced Final Attack",
+                "koreanname": "어드밴스드 파이널 어택",
+                "icon": "mihile/Skill_Advanced_Final_Attack.png"
+            },
+            {
+                "name": "Combat Mastery",
+                "koreanname": "컴뱃 마스터리",
+                "icon": "mihile/Skill_Combat_Mastery.png"
+            },
+            {
+                "name": "Power Stance",
+                "koreanname": "스탠스",
+                "icon": "mihile/Skill_Power_Stance.png"
+            }
+        ],
+        [
+            {
+                "name": "Shield of Light",
+                "koreanname": "로 아이아스",
+                "icon": "mihile/Skill_Shield_Of_Light.png"
+            },
+            {
+                "name": "Radiant Soul",
+                "koreanname": "소드 오브 소울 라이트",
+                "icon": "mihile/Skill_Radiant_Soul.png"
+            },
+            {
+                "name": "Sword of Light",
+                "koreanname": "클라우 솔라스",
+                "icon": "mihile/Skill_Sword_Of_Light.png"
+            },
+            {
+                "name": "Light of Courage",
+                "koreanname": "라이트 오브 커리지",
+                "icon": "mihile/Skill_Light_Of_Courage.png"
+            }
+        ]
     ]
-
 }
